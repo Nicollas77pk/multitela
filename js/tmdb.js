@@ -202,3 +202,43 @@ alert("Erro ao importar filme");
 
 
 }
+function salvarFilme(){
+
+
+let filme = {
+
+
+titulo: document.getElementById("titulo").value,
+
+
+ano: document.getElementById("ano").value,
+
+
+genero: document.getElementById("genero").value,
+
+
+diretor: document.getElementById("diretor").value,
+
+
+sinopse: document.getElementById("sinopse").value,
+
+
+imagem: document.getElementById("imagem").value
+
+
+};
+
+
+
+console.log(filme);
+
+
+
+alert(
+"Filme pronto para salvar:\n\n" 
++ filme.titulo
+);
+
+
+
+}
