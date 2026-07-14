@@ -1,3 +1,10 @@
+console.log("TMDB JS NOVO CARREGADO");
+
+
+async function buscarFilme(){
+
+...
+
 async function buscarFilme(){
 
 
