@@ -267,40 +267,62 @@ alert("Erro ao salvar filme");
 }
 
 
-let filme = {
+async function salvarFilme(){
 
+
+let filme = {
 
 titulo: document.getElementById("titulo").value,
 
-
 ano: document.getElementById("ano").value,
-
 
 genero: document.getElementById("genero").value,
 
-
 diretor: document.getElementById("diretor").value,
-
 
 sinopse: document.getElementById("sinopse").value,
 
-
 imagem: document.getElementById("imagem").value
-
 
 };
 
 
 
-console.log(filme);
+try{
+
+
+let resposta = await fetch("../salvar-filme.php",{
+
+method:"POST",
+
+headers:{
+
+"Content-Type":"application/json"
+
+},
+
+body:JSON.stringify(filme)
+
+});
 
 
 
-alert(
-"Filme pronto para salvar:\n\n" 
-+ filme.titulo
-);
+let resultado = await resposta.json();
 
+
+alert(resultado.mensagem);
+
+
+
+}
+catch(erro){
+
+console.log(erro);
+
+alert("Erro ao salvar filme");
+
+
+}
 
 
 }
