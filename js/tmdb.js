@@ -1,26 +1,56 @@
-function buscarFilme(){
-
-    let nomeFilme = document.getElementById("nomeFilme").value;
+async function buscarFilme(){
 
 
-    if(nomeFilme.trim() === ""){
-        alert("Digite o nome de um filme");
-        return;
-    }
+let nomeFilme = document.getElementById("nomeFilme").value;
 
 
-    document.getElementById("resultadoBusca").innerHTML = `
+if(nomeFilme.trim() === ""){
 
-        <div class="resultado-filme">
+alert("Digite o nome de um filme");
 
-            <h3>Filme pesquisado:</h3>
+return;
 
-            <p>${nomeFilme}</p>
+}
 
-            <p>Aguardando conexão com TMDB...</p>
 
-        </div>
 
-    `;
+let url = 
+`https://api.themoviedb.org/3/search/movie?api_key=${TMDB_API_KEY}&language=pt-BR&query=${nomeFilme}`;
+
+
+
+try{
+
+
+let resposta = await fetch(url);
+
+
+let dados = await resposta.json();
+
+
+
+console.log(dados);
+
+
+
+document.getElementById("resultadoBusca").innerHTML = `
+
+<h3>Resultados encontrados:</h3>
+
+<p>${dados.results.length} filmes encontrados</p>
+
+`;
+
+
+}
+
+catch(erro){
+
+console.log(erro);
+
+alert("Erro ao consultar TMDB");
+
+}
+
 
 }
