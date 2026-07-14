@@ -3,11 +3,6 @@ console.log("TMDB JS NOVO CARREGADO");
 
 async function buscarFilme(){
 
-...
-
-async function buscarFilme(){
-
-
 let nomeFilme = document.getElementById("nomeFilme").value;
 
 
