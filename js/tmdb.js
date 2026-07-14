@@ -270,39 +270,54 @@ async function selecionarFilme(id){
 
 
 
-async function salvarFilme(){
+function salvarFilme(){
+
+
+let filme = {
+
+
+titulo: document.getElementById("titulo").value,
+
+ano: document.getElementById("ano").value,
+
+genero: document.getElementById("genero").value,
+
+diretor: document.getElementById("diretor").value,
+
+sinopse: document.getElementById("sinopse").value,
+
+imagem: document.getElementById("imagem").value
+
+
+};
 
 
 
-    let filme = {
+let filmes = JSON.parse(
+localStorage.getItem("filmes")
+) || [];
 
 
 
-        titulo: document.getElementById("titulo").value,
-
-
-        ano: document.getElementById("ano").value,
-
-
-        genero: document.getElementById("genero").value,
-
-
-        diretor: document.getElementById("diretor").value,
-
-
-        sinopse: document.getElementById("sinopse").value,
-
-
-        imagem: document.getElementById("imagem").value
+filmes.push(filme);
 
 
 
-    };
+localStorage.setItem(
+"filmes",
+JSON.stringify(filmes)
+);
 
 
 
-    console.log(filme);
+alert("Filme salvo com sucesso!");
 
+
+
+console.log(filmes);
+
+
+}
 
 
 
