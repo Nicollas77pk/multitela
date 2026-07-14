@@ -1,81 +1,149 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+
 <meta charset="UTF-8">
-<title>Novo Filme</title>
 
-<style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-body{
+<title>Adicionar Filme - MultiTela CMS</title>
 
-font-family:Arial;
-background:#f5f5f5;
-padding:40px;
-
-}
-
-.card{
-
-background:white;
-padding:25px;
-border-radius:8px;
-max-width:700px;
-margin:auto;
-
-}
-
-input,textarea{
-
-width:100%;
-padding:12px;
-margin-top:8px;
-margin-bottom:18px;
-
-}
-
-button{
-
-padding:12px 20px;
-background:#2563eb;
-color:white;
-border:none;
-cursor:pointer;
-
-}
-
-</style>
+<link rel="stylesheet" href="../css/style.css">
 
 </head>
 
+
 <body>
 
-<div class="card">
 
-<h1>Novo Filme</h1>
+<header>
 
-<input id="titulo" placeholder="Título">
+    <h1>MultiTela CMS</h1>
 
-<input id="ano" placeholder="Ano">
+</header>
 
-<textarea id="sinopse" placeholder="Sinopse"></textarea>
 
-<button onclick="salvar()">
 
-Salvar
+<main class="admin-container">
 
-</button>
 
-</div>
+    <h2>Adicionar Novo Filme</h2>
 
-<script>
 
-function salvar(){
+    <section class="campo-busca">
 
-alert("Em breve iremos salvar no JSON.");
 
-}
+        <h3>Buscar filme no TMDB</h3>
 
-</script>
+
+        <div class="barra-pesquisa">
+
+
+            <input 
+            type="text" 
+            id="nomeFilme"
+            placeholder="Digite o nome do filme">
+
+
+            <button onclick="buscarFilme()">
+                Buscar
+            </button>
+
+
+        </div>
+
+
+    </section>
+
+
+
+
+    <section id="resultadoBusca" class="resultado">
+
+
+        <p>
+            Digite um filme para começar a busca.
+        </p>
+
+
+    </section>
+
+
+
+
+    <hr>
+
+
+
+
+    <section class="dados-filme">
+
+
+        <h3>Dados do Filme</h3>
+
+
+        <label>
+            Título
+        </label>
+
+        <input type="text" id="titulo">
+
+
+        <label>
+            Ano
+        </label>
+
+        <input type="text" id="ano">
+
+
+        <label>
+            Gênero
+        </label>
+
+        <input type="text" id="genero">
+
+
+        <label>
+            Diretor
+        </label>
+
+        <input type="text" id="diretor">
+
+
+        <label>
+            Sinopse
+        </label>
+
+        <textarea id="sinopse"></textarea>
+
+
+
+        <label>
+            Imagem Poster
+        </label>
+
+        <input type="text" id="imagem">
+
+
+        <button class="salvar">
+
+            Salvar Filme
+
+        </button>
+
+
+    </section>
+
+
+
+</main>
+
+
+
+<script src="../js/tmdb.js"></script>
+
 
 </body>
+
 </html>
