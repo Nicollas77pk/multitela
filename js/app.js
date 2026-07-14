@@ -1,27 +1,26 @@
 fetch('../database/filmes.json')
-.then(r=>r.json())
-.then(filmes=>{
+.then(r => r.json())
+.then(filmes => {
 
-document.getElementById("totalFilmes").innerHTML=filmes.length;
+    document.getElementById("totalFilmes").textContent = filmes.length;
 
-let html='';
+    let html = '';
 
-filmes.forEach(f=>{
+    filmes.forEach(f => {
 
-html+=`
-<tr>
+        html += `
+        <tr>
+            <td>${f.id}</td>
+            <td>${f.titulo}</td>
+            <td>${f.ano}</td>
+            <td>
+                <a href="#" class="btn-editar">Editar</a>
+            </td>
+        </tr>
+        `;
 
-<td>${f.id}</td>
+    });
 
-<td>${f.titulo}</td>
-
-<td>${f.ano}</td>
-
-</tr>
-`;
-
-});
-
-document.getElementById("filmes").innerHTML=html;
+    document.getElementById("filmes").innerHTML = html;
 
 });
