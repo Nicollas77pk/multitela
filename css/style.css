@@ -1,0 +1,434 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f3f5f9;
+    display:flex;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+
+    width:240px;
+    height:100vh;
+
+    background:#111827;
+    color:white;
+
+    position:fixed;
+
+}
+
+.logo{
+
+    font-size:28px;
+    font-weight:bold;
+
+    padding:25px;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.menu{
+
+    margin-top:20px;
+
+}
+
+.menu a{
+
+    display:block;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:16px 25px;
+
+    transition:.3s;
+
+}
+
+.menu a:hover{
+
+    background:#1f2937;
+
+}
+
+/* CONTEÚDO */
+
+.content{
+
+    margin-left:240px;
+
+    width:100%;
+
+    padding:35px;
+
+}
+
+h1{
+
+    margin-bottom:25px;
+
+}
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:20px;
+
+}
+
+.card{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:12px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.05);
+
+}
+
+.card h2{
+
+    font-size:15px;
+
+    color:#666;
+
+}
+
+.numero{
+
+    font-size:42px;
+
+    margin-top:15px;
+
+    font-weight:bold;
+
+}
+
+.tabela{
+
+    margin-top:35px;
+
+    background:white;
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.05);
+
+}
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+th{
+
+    background:#111827;
+
+    color:white;
+
+    padding:16px;
+
+}
+
+td{
+
+    padding:16px;
+
+    border-bottom:1px solid #eee;
+
+}
+
+.topo{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:30px;
+
+}
+
+.btn{
+
+    background:#238636;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:12px 18px;
+
+    border-radius:8px;
+
+    font-weight:bold;
+
+    transition:.2s;
+
+}
+
+.btn:hover{
+
+    background:#2ea043;
+
+}
+.btn-editar{
+
+    background:#0969DA;
+
+    color:white;
+
+    padding:8px 12px;
+
+    border-radius:6px;
+
+    text-decoration:none;
+
+    font-size:14px;
+
+}
+
+.btn-editar:hover{
+
+    background:#0860ca;
+
+}
+
+/* ==========================
+   CADASTRO DE FILMES
+========================== */
+
+
+.admin-container{
+
+    max-width:900px;
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:12px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.05);
+
+}
+
+
+
+.admin-container h2{
+
+    margin-bottom:25px;
+
+}
+
+
+
+.campo-busca{
+
+    background:#111827;
+
+    padding:25px;
+
+    border-radius:12px;
+
+    color:white;
+
+    margin-bottom:25px;
+
+}
+
+
+
+.campo-busca h3{
+
+    margin-bottom:20px;
+
+}
+
+
+
+.barra-pesquisa{
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+
+
+.barra-pesquisa input{
+
+    flex:1;
+
+    padding:14px;
+
+    border-radius:8px;
+
+    border:none;
+
+    font-size:16px;
+
+}
+
+
+
+.barra-pesquisa button{
+
+    background:#238636;
+
+    color:white;
+
+    border:none;
+
+    padding:14px 25px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+}
+
+
+
+.barra-pesquisa button:hover{
+
+    background:#2ea043;
+
+}
+
+
+
+/* RESULTADO DA BUSCA */
+
+
+.resultado{
+
+    background:#f9fafb;
+
+    padding:20px;
+
+    border-radius:10px;
+
+    margin-bottom:25px;
+
+    min-height:80px;
+
+}
+
+
+
+/* FORMULÁRIO */
+
+
+.dados-filme{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+
+
+.dados-filme h3{
+
+    margin-bottom:20px;
+
+}
+
+
+
+.dados-filme label{
+
+    margin-top:15px;
+
+    margin-bottom:6px;
+
+    font-weight:bold;
+
+}
+
+
+
+.dados-filme input,
+.dados-filme textarea{
+
+
+    width:100%;
+
+    padding:12px;
+
+    border:1px solid #ddd;
+
+    border-radius:8px;
+
+    font-size:15px;
+
+}
+
+
+
+.dados-filme textarea{
+
+    height:130px;
+
+    resize:none;
+
+}
+
+
+
+.salvar{
+
+    margin-top:25px;
+
+    background:#009867;
+
+    color:white;
+
+    border:none;
+
+    padding:14px;
+
+    border-radius:8px;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+}
+
+
+
+.salvar:hover{
+
+    background:#007d54;
+
+}
