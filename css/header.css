@@ -1,20 +1,10 @@
-.header{
+header{
 
-    position:fixed;
+    position:sticky;
 
     top:0;
 
-    left:0;
-
-    width:100%;
-
-    height:70px;
-
-    padding:0 40px;
-
-    background:rgba(13,13,13,.92);
-
-    backdrop-filter:blur(12px);
+    z-index:999;
 
     display:flex;
 
@@ -22,94 +12,42 @@
 
     align-items:center;
 
-    z-index:9999;
+    padding:18px 40px;
 
-    transition:.3s;
+    background:#111;
+
+    border-bottom:1px solid #222;
 
 }
 
 .logo{
 
-    font-size:32px;
+    font-size:30px;
 
     font-weight:bold;
 
-}
-
-.logo a{
-
-    color:#009687;
+    color:#00bfa5;
 
 }
 
-.menu{
+nav{
 
     display:flex;
 
-    gap:28px;
+    gap:30px;
 
 }
 
-.menu a{
+nav a{
 
     color:white;
-
-    font-size:15px;
 
     transition:.25s;
 
 }
 
-.menu a:hover{
+nav a:hover{
 
-    color:#009687;
-
-}
-
-.header-right{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:10px;
-
-}
-
-#campoBusca{
-
-    width:260px;
-
-    height:40px;
-
-    border:none;
-
-    border-radius:25px;
-
-    padding:0 18px;
-
-    background:#222;
-
-    color:white;
-
-    outline:none;
-
-}
-
-#btnBusca{
-
-    width:42px;
-
-    height:42px;
-
-    border:none;
-
-    border-radius:50%;
-
-    background:#009687;
-
-    cursor:pointer;
-
-    font-size:18px;
+    color:#00bfa5;
 
 }
