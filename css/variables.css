@@ -1,0 +1,39 @@
+:root{
+
+    /* Cores */
+
+    --bg:#0d0d0d;
+
+    --bg2:#171717;
+
+    --bg3:#242424;
+
+    --primary:#009687;
+
+    --primary-hover:#00b8a6;
+
+    --text:#ffffff;
+
+    --text2:#c7c7c7;
+
+    --border:#2c2c2c;
+
+    --shadow:0 10px 30px rgba(0,0,0,.35);
+
+    /* Layout */
+
+    --radius:16px;
+
+    --header-height:72px;
+
+    --container:1500px;
+
+    /* Cards */
+
+    --card-width:190px;
+
+    --card-height:285px;
+
+    --transition:.25s;
+
+}
