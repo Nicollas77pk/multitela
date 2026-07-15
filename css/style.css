@@ -64,3 +64,26 @@ h2{
     display:none;
 
 }
+
+
+#hero{
+
+    width:100%;
+
+    height:65vh;
+
+    background:#222;
+
+    border-radius:15px;
+
+    background-size:cover;
+
+    background-position:center;
+
+    display:flex;
+
+    align-items:flex-end;
+
+    padding:50px;
+
+}
