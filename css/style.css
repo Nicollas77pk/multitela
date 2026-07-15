@@ -101,28 +101,6 @@ h2{
 
 
 
-.section-title{
 
-    display:flex;
 
-    justify-content:space-between;
 
-    align-items:center;
-
-    margin-bottom:18px;
-
-}
-
-.section-title h2{
-
-    font-size:30px;
-
-}
-
-.section-title a{
-
-    color:var(--primary);
-
-    font-weight:bold;
-
-}
