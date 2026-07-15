@@ -67,9 +67,13 @@ h2{
 
 #hero{
 
-    height:78vh;
+    width:100%;
 
-    border-radius:20px;
+    height:65vh;
+
+    background:#222;
+
+    border-radius:15px;
 
     background-size:cover;
 
@@ -79,9 +83,7 @@ h2{
 
     align-items:flex-end;
 
-    overflow:hidden;
-
-    margin-top:10px;
+    padding:50px;
 
 }
 
