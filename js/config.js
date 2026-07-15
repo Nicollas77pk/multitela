@@ -6,14 +6,15 @@ const CONFIG = {
 
     API_URL: "https://api.themoviedb.org/3",
 
-    IMAGE_URL: "https://image.tmdb.org/t/p",
-
     IMAGE_POSTER: "https://image.tmdb.org/t/p/w342",
 
-    IMAGE_BACKDROP: "https://image.tmdb.org/t/p/w780",
+    IMAGE_BACKDROP: "https://image.tmdb.org/t/p/w1280",
 
     LANGUAGE: "pt-BR",
 
-    COUNTRY: "BR"
+    REGION: "BR"
 
 };
+
+
+window.CONFIG = CONFIG;
