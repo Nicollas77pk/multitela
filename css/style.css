@@ -87,3 +87,14 @@ h2{
     margin-top:10px;
 
 }
+
+
+.container{
+
+    width:95%;
+
+    max-width:var(--container);
+
+    margin:auto;
+
+}
