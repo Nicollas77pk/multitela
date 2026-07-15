@@ -35,7 +35,6 @@ function criarCard(item, tipo = "movie") {
 }
 
 
-
 function renderizarCards(containerId, lista, tipo = "movie") {
 
     const container = document.getElementById(containerId);
