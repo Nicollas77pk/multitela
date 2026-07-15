@@ -1,10 +1,20 @@
-header{
+.header{
 
-    position:sticky;
+    position:fixed;
 
     top:0;
 
-    z-index:999;
+    left:0;
+
+    width:100%;
+
+    height:70px;
+
+    padding:0 40px;
+
+    background:rgba(13,13,13,.92);
+
+    backdrop-filter:blur(12px);
 
     display:flex;
 
@@ -12,42 +22,94 @@ header{
 
     align-items:center;
 
-    padding:18px 40px;
+    z-index:9999;
 
-    background:#111;
-
-    border-bottom:1px solid #222;
+    transition:.3s;
 
 }
 
 .logo{
 
-    font-size:30px;
+    font-size:32px;
 
     font-weight:bold;
 
-    color:#00bfa5;
+}
+
+.logo a{
+
+    color:#009687;
 
 }
 
-nav{
+.menu{
 
     display:flex;
 
-    gap:30px;
+    gap:28px;
 
 }
 
-nav a{
+.menu a{
 
     color:white;
+
+    font-size:15px;
 
     transition:.25s;
 
 }
 
-nav a:hover{
+.menu a:hover{
 
-    color:#00bfa5;
+    color:#009687;
+
+}
+
+.header-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+#campoBusca{
+
+    width:260px;
+
+    height:40px;
+
+    border:none;
+
+    border-radius:25px;
+
+    padding:0 18px;
+
+    background:#222;
+
+    color:white;
+
+    outline:none;
+
+}
+
+#btnBusca{
+
+    width:42px;
+
+    height:42px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#009687;
+
+    cursor:pointer;
+
+    font-size:18px;
 
 }
