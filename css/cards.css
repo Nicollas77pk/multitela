@@ -1,26 +1,41 @@
+/* =========================
+   CARDS
+========================= */
+
+
 .card{
 
+    width:190px;
     min-width:190px;
 
-    background:#1b1b1b;
+    background:#171717;
 
-    border-radius:12px;
+    border-radius:14px;
 
     overflow:hidden;
 
     cursor:pointer;
 
-    transition:.3s;
+    position:relative;
+
+    transition:.3s ease;
 
 }
 
-.card:hover{
 
-    transform:scale(1.05);
+
+.card-image{
+
+    position:relative;
+
+    width:100%;
 
 }
+
+
 
 .card img{
+
 
     width:100%;
 
@@ -30,144 +45,142 @@
 
 }
 
+
+
 .card-info{
+
 
     padding:12px;
 
 }
 
+
+
 .card h3{
+
 
     font-size:15px;
 
-    margin-bottom:10px;
+    line-height:20px;
 
     height:40px;
 
     overflow:hidden;
 
+    margin-bottom:10px;
+
+    color:#fff;
+
+
 }
+
+
+
+/* NOTA */
 
 .nota{
 
-    display:inline-block;
+
+    position:absolute;
+
+    top:10px;
+
+    right:10px;
+
 
     background:#00bfa5;
 
     color:#000;
 
-    padding:5px 10px;
+
+    padding:5px 9px;
 
     border-radius:20px;
 
+
+    font-size:12px;
+
+    font-weight:bold;
+
+}
+
+
+
+
+.tipo{
+
+
+    font-size:12px;
+
+    color:#aaa;
+
+}
+
+
+
+
+/* HOVER DESKTOP */
+
+
+@media(min-width:768px){
+
+
+.card:hover{
+
+
+    transform:translateY(-8px) scale(1.04);
+
+
+    box-shadow:
+
+    0 15px 35px rgba(0,0,0,.5);
+
+
+}
+
+
+
+}
+
+
+
+
+/* MOBILE */
+
+
+@media(max-width:600px){
+
+
+.card{
+
+
+    width:145px;
+
+    min-width:145px;
+
+
+}
+
+
+
+.card img{
+
+
+    height:220px;
+
+
+}
+
+
+
+.card h3{
+
+
     font-size:13px;
 
-    font-weight:bold;
 
 }
 
 
-
-/* ---------- SEÇÃO ---------- */
-
-.secao{
-
-    margin-bottom:55px;
-
-}
-
-.secao-header{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    margin-bottom:18px;
-
-}
-
-.secao-header a{
-
-    color:#009687;
-
-    font-weight:bold;
-
-}
-
-.slider{
-
-    position:relative;
-
-}
-
-.carrossel{
-
-    display:flex;
-
-    gap:18px;
-
-    overflow-x:auto;
-
-    scroll-behavior:smooth;
-
-    scrollbar-width:none;
-
-    padding:8px 4px;
-
-}
-
-.carrossel::-webkit-scrollbar{
-
-    display:none;
-
-}
-
-/* ---------- SETAS ---------- */
-
-.slider-btn{
-
-    position:absolute;
-
-    top:50%;
-
-    transform:translateY(-50%);
-
-    width:48px;
-
-    height:70px;
-
-    border:none;
-
-    background:rgba(0,0,0,.55);
-
-    color:white;
-
-    font-size:28px;
-
-    cursor:pointer;
-
-    z-index:20;
-
-    transition:.25s;
-
-}
-
-.slider-btn:hover{
-
-    background:#009687;
-
-}
-
-.prev{
-
-    left:0;
-
-}
-
-.next{
-
-    right:0;
 
 }
