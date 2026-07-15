@@ -33,3 +33,18 @@ function criarCard(item, tipo = "movie") {
         </div>
     `;
 }
+function renderizarCards(containerId, lista, tipo = "movie") {
+
+    const container = document.getElementById(containerId);
+
+    if (!container) return;
+
+    lista.forEach(item => {
+
+        if (!item.poster_path) return;
+
+        container.innerHTML += criarCard(item, tipo);
+
+    });
+
+}
