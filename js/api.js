@@ -1,4 +1,4 @@
-async function api(endpoint){
+async function api(endpoint) {
 
     const url =
         `${CONFIG.API_URL}${endpoint}` +
@@ -6,8 +6,14 @@ async function api(endpoint){
         `api_key=${CONFIG.API_KEY}` +
         `&language=${CONFIG.LANGUAGE}`;
 
+    console.log("URL:", url);
+
     const resposta = await fetch(url);
 
-    return await resposta.json();
+    const dados = await resposta.json();
+
+    console.log("RESPOSTA:", dados);
+
+    return dados;
 
 }
