@@ -1,1 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>MultiTela - Filmes</title>
+
+
+<meta name="description"
+content="Filmes online, descubra onde assistir seus filmes favoritos.">
+
+
+<link rel="icon" href="../imagens/favicon.png">
+
+
+<link rel="stylesheet" href="../css/variables.css">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/header.css">
+<link rel="stylesheet" href="../css/cards.css">
+<link rel="stylesheet" href="../css/modal.css">
+<link rel="stylesheet" href="../css/footer.css">
+
+
+</head>
+
+
+<body>
+
+
+
+<!-- HEADER -->
+
+<header class="header">
+
+<div class="container">
+
+
+<a href="../index.html" class="logo">
+
+MultiTela
+
+</a>
+
+
+
+<nav class="menu">
+
+
+<a href="filmes.html">
+
+Filmes
+
+</a>
+
+
+<a href="series.html">
+
+Séries
+
+</a>
+
+
+<a href="animes.html">
+
+Animes
+
+</a>
+
+
+<a href="doramas.html">
+
+Doramas
+
+</a>
+
+
+<a href="novelas.html">
+
+Novelas
+
+</a>
+
+
+<a href="documentarios.html">
+
+Documentários
+
+</a>
+
+
+</nav>
+
+
+
+<div class="header-right">
+
+
+<input
+id="campoBusca"
+type="text"
+placeholder="Buscar filmes ou séries...">
+
+
+
+<button id="btnBusca">
+
+🔍
+
+</button>
+
+
+
+</div>
+
+
+</div>
+
+</header>
+
+
+
+
+<!-- CONTEÚDO -->
+
+
+<section class="container secao">
+
+
+<div class="section-title">
+
+
+<h2>
+
+🎬 Filmes Populares
+
+</h2>
+
+
+</div>
+
+
+
+<div
+id="lista-filmes"
+class="categoria-lista">
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+<!-- MODAL -->
+
+
+<div id="modal" class="modal">
+
+
+<div class="modal-box">
+
+
+<div
+id="modalBanner"
+class="modal-banner">
+
+
+<button
+id="fecharModal"
+class="modal-close">
+
+✕
+
+</button>
+
+
+</div>
+
+
+
+<div class="modal-content">
+
+
+<h1 id="modalTitulo"></h1>
+
+
+
+<div
+id="modalMeta"
+class="modal-meta">
+
+</div>
+
+
+
+<p
+id="modalDescricao"
+class="modal-description">
+
+</p>
+
+
+
+<div id="modalTrailer">
+
+</div>
+
+
+
+<div id="modalProviders">
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<footer>
+
+
+© 2026 MultiTela
+
+
+</footer>
+
+
+
+
+
+<script src="../js/config.js"></script>
+
+<script src="../js/api.js"></script>
+
+<script src="../js/card.js"></script>
+
+<script src="../js/modal.js"></script>
+
+<script src="../js/categoria.js"></script>
+
+
+</body>
+
+
+</html>
