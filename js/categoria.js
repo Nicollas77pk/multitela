@@ -113,18 +113,33 @@ async function carregarCategoria(){
     if(carregando) return;
 
 
-    carregando=true;
-
+    carregando = true;
 
 
     try{
 
 
-       const dados = await api(
+        let url = endpointAtual;
 
-    `${endpointAtual}&language=pt-BR&sort_by=popularity.desc&page=${paginaAtual}`
 
-);
+
+        if(url.includes("?")){
+
+
+            url += `&sort_by=popularity.desc&page=${paginaAtual}`;
+
+
+        }else{
+
+
+            url += `?sort_by=popularity.desc&page=${paginaAtual}`;
+
+
+        }
+
+
+
+        const dados = await api(url);
 
 
 
@@ -168,6 +183,9 @@ async function carregarCategoria(){
 
 
 }
+
+
+
 
 
 
