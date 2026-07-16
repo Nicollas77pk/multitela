@@ -120,11 +120,11 @@ async function carregarCategoria(){
     try{
 
 
-        const dados = await api(
+       const dados = await api(
 
-            `${endpointAtual}&language=pt-BR&sort_by=popularity.desc&page=${paginaAtual}`
+    `${endpointAtual}&language=pt-BR&sort_by=popularity.desc&page=${paginaAtual}`
 
-        );
+);
 
 
 
