@@ -199,93 +199,6 @@ h2{
    HERO
 ========================= */
 
-
-#hero{
-
-
-    width:100%;
-
-
-    height:65vh;
-
-
-    background-size:cover;
-
-    background-position:center;
-
-
-    border-radius:18px;
-
-
-    overflow:hidden;
-
-
-    position:relative;
-
-
-
-}
-
-
-
-#hero::after{
-
-
-    content:"";
-
-
-    position:absolute;
-
-    inset:0;
-
-
-    background:
-
-    linear-gradient(
-
-    to top,
-
-    #0d0d0d,
-
-    transparent
-
-    );
-
-
-}
-
-
-
-
-
-/* =========================
-   MOBILE
-========================= */
-
-
-@media(max-width:600px){
-
-
-h2{
-
-
-    font-size:22px;
-
-
-}
-
-
-
-section{
-
-
-    width:92%;
-
-
-}
-
-
-
 #hero{
 
     position:relative;
@@ -408,3 +321,37 @@ section{
     color:#fff;
 
 }
+
+
+
+
+
+
+/* =========================
+   MOBILE
+========================= */
+
+
+@media(max-width:600px){
+
+
+h2{
+
+
+    font-size:22px;
+
+
+}
+
+
+
+section{
+
+
+    width:92%;
+
+
+}
+
+
+
