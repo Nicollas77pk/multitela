@@ -170,30 +170,59 @@ async function carregarOndeAssistir(id, tipo) {
 }
 
 /* ===========================
-   FECHAR
+   FECHAR MODAL
 =========================== */
 
-fecharModal.onclick = () => {
 
-    modal.classList.remove("ativo");
+function fecharModalFuncao(){
 
-};
-
-modal.onclick = e => {
-
-    if (e.target === modal) {
+    if(modal){
 
         modal.classList.remove("ativo");
+
+        document.body.style.overflow = "";
 
     }
 
-};
+}
 
-document.addEventListener("keydown", e => {
 
-    if (e.key === "Escape") {
 
-        modal.classList.remove("ativo");
+if(fecharModal){
+
+    fecharModal.addEventListener("click", function(e){
+
+        e.stopPropagation();
+
+        fecharModalFuncao();
+
+    });
+
+}
+
+
+
+if(modal){
+
+    modal.addEventListener("click", function(e){
+
+        if(e.target === modal){
+
+            fecharModalFuncao();
+
+        }
+
+    });
+
+}
+
+
+
+document.addEventListener("keydown", function(e){
+
+    if(e.key === "Escape"){
+
+        fecharModalFuncao();
 
     }
 
