@@ -17,15 +17,15 @@ document.addEventListener("DOMContentLoaded",()=>{
 
 
 
-    if(caminho.includes("filmes")){
+  if(caminho.includes("filmes")){
 
 
-        endpoint="/movie/popular";
+    endpointAtual="/discover/movie";
 
-        tipo="movie";
+    tipoAtual="movie";
 
 
-    }
+}
 
 
 
