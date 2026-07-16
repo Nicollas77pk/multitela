@@ -6,189 +6,310 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>MultiTela - Onde Assistir Filmes, Séries, Animes e Novelas</title>
+    <title>MultiTela - Onde Assistir Filmes e Séries</title>
 
-    <meta name="description" content="Descubra onde assistir filmes, séries, animes, novelas, doramas e documentários.">
+    <meta name="description"
+        content="Descubra onde assistir filmes, séries, animes, doramas e documentários.">
 
+    <link rel="icon" href="imagens/favicon.png">
 
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/header.css">
-<link rel="stylesheet" href="css/cards.css">
-<link rel="stylesheet" href="css/modal.css">
-<link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/cards.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/footer.css">
 
 </head>
 
 <body>
 
     <!-- HEADER -->
-<header class="header">
 
-    <div class="logo">
-        <a href="/">MultiTela</a>
-    </div>
+    <header class="header">
 
-    <nav class="menu">
+        <div class="container">
 
-        <a href="paginas/filmes.html">Filmes</a>
+            <a href="index.html" class="logo">
 
-        <a href="paginas/series.html">Séries</a>
+                MultiTela
 
-        <a href="paginas/animes.html">Animes</a>
+            </a>
 
-        <a href="paginas/doramas.html">Doramas</a>
+            <nav class="menu">
 
-        <a href="paginas/novelas.html">Novelas</a>
+                <a href="paginas/filmes.html">Filmes</a>
 
-        <a href="paginas/documentarios.html">Documentários</a>
+                <a href="paginas/series.html">Séries</a>
 
-    </nav>
+                <a href="paginas/animes.html">Animes</a>
 
-    <div class="header-right">
+                <a href="paginas/doramas.html">Doramas</a>
 
-        <input
-            type="text"
-            id="campoBusca"
-            placeholder="Buscar filmes, séries...">
+                <a href="paginas/novelas.html">Novelas</a>
 
-        <button id="btnBusca">
-            🔍
-        </button>
+                <a href="paginas/documentarios.html">Documentários</a>
 
-    </div>
+            </nav>
 
-</header>
+            <div class="header-right">
 
+                <input
+                    id="campoBusca"
+                    type="text"
+                    placeholder="Buscar filmes ou séries...">
+
+                <button id="btnBusca">
+
+                    🔍
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
 
     <!-- HERO -->
 
     <section id="hero">
 
-    </section>
+        <div class="hero-overlay">
 
+            <div class="hero-content">
 
+                <span id="hero-tag">
 
-<section class="secao">
+                    Em destaque
 
-    <div class="secao-header">
+                </span>
 
-        <h2>🎬 Filmes Populares</h2>
+                <h1 id="hero-title">
 
-        <a href="paginas/filmes.html">Ver todos →</a>
+                    Carregando...
 
-    </div>
+                </h1>
 
-    <div class="slider">
+                <p id="hero-description">
 
-        <button class="slider-btn prev">
-            ❮
-        </button>
+                </p>
 
-        <div
-            class="carrossel"
-            id="carrossel-filmes">
+                <div class="hero-buttons">
 
-        </div>
+                    <button id="btnDetalhes">
 
-        <button class="slider-btn next">
-            ❯
-        </button>
+                        Ver detalhes
 
-    </div>
+                    </button>
 
-</section>
+                </div>
 
-
-
-    <!-- SÉRIES -->
-
-    <section>
-
-        <h2>📺 Séries</h2>
-
-        <div
-            id="carrossel-series"
-            class="carrossel">
+            </div>
 
         </div>
 
     </section>
 
+    <!-- FILMES -->
 
+    <section class="container secao">
 
-    <!-- ANIMES -->
+        <div class="section-title">
 
-    <section>
+            <h2>🎬 Filmes Populares</h2>
 
-        <h2>🎌 Animes</h2>
+            <a href="paginas/filmes.html">
 
-        <div
-            id="carrossel-animes"
-            class="carrossel">
+                Ver todos →
 
-        </div>
-
-    </section>
-
-
-
-    <!-- NOVELAS -->
-
-    <section>
-
-        <h2>🇧🇷 Novelas</h2>
-
-        <div
-            id="carrossel-novelas"
-            class="carrossel">
+            </a>
 
         </div>
 
-    </section>
+        <div class="slider">
 
+            <button class="slider-btn prev">
 
+                ❮
 
-    <!-- MODAL -->
+            </button>
 
-    <div
-    id="modal"
-    class="modal">
+            <div
+                class="carrossel"
+                id="carrossel-filmes">
 
-    <div class="modal-box">
+            </div>
 
-        <div
-            class="modal-banner"
-            id="modalBanner">
+            <button class="slider-btn next">
 
-            <button
-                id="fecharModal"
-                class="modal-close">
-
-                ✕
+                ❯
 
             </button>
 
         </div>
 
-        <div class="modal-content">
+    </section>
 
-            <h1 id="modalTitulo">
+    <!-- SERIES -->
 
-            </h1>
+    <section class="container secao">
+
+        <div class="section-title">
+
+            <h2>📺 Séries Populares</h2>
+
+            <a href="paginas/series.html">
+
+                Ver todos →
+
+            </a>
+
+        </div>
+
+        <div class="slider">
+
+            <button class="slider-btn prev">
+
+                ❮
+
+            </button>
 
             <div
-                id="modalMeta"
-                class="modal-meta">
+                class="carrossel"
+                id="carrossel-series">
 
             </div>
 
-            <p
-                id="modalDescricao"
-                class="modal-description">
+            <button class="slider-btn next">
 
-            </p>
+                ❯
 
-            <div id="modalProviders">
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- ANIMES -->
+
+    <section class="container secao">
+
+        <div class="section-title">
+
+            <h2>🎌 Animes</h2>
+
+            <a href="paginas/animes.html">
+
+                Ver todos →
+
+            </a>
+
+        </div>
+
+        <div class="slider">
+
+            <button class="slider-btn prev">
+
+                ❮
+
+            </button>
+
+            <div
+                class="carrossel"
+                id="carrossel-animes">
+
+            </div>
+
+            <button class="slider-btn next">
+
+                ❯
+
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- NOVELAS -->
+
+    <section class="container secao">
+
+        <div class="section-title">
+
+            <h2>🇧🇷 Novelas</h2>
+
+            <a href="paginas/novelas.html">
+
+                Ver todos →
+
+            </a>
+
+        </div>
+
+        <div class="slider">
+
+            <button class="slider-btn prev">
+
+                ❮
+
+            </button>
+
+            <div
+                class="carrossel"
+                id="carrossel-novelas">
+
+            </div>
+
+            <button class="slider-btn next">
+
+                ❯
+
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- MODAL -->
+
+    <div id="modal" class="modal">
+
+        <div class="modal-box">
+
+            <div
+                id="modalBanner"
+                class="modal-banner">
+
+                <button
+                    id="fecharModal"
+                    class="modal-close">
+
+                    ✕
+
+                </button>
+
+            </div>
+
+            <div class="modal-content">
+
+                <h1 id="modalTitulo"></h1>
+
+                <div
+                    id="modalMeta"
+                    class="modal-meta">
+
+                </div>
+
+                <p
+                    id="modalDescricao"
+                    class="modal-description">
+
+                </p>
+
+                <div id="modalProviders">
+
+                </div>
 
             </div>
 
@@ -196,29 +317,23 @@
 
     </div>
 
-</div>
-
-
-
     <!-- FOOTER -->
 
     <footer>
 
-        © 2026 Multitela
+        © 2026 MultiTela
 
     </footer>
 
-
-
     <!-- JS -->
 
-<script src="js/config.js"></script>
-<script src="js/api.js"></script>
-<script src="js/card.js"></script>
-<script src="js/modal.js"></script>
-<script src="js/busca.js"></script>
-<script src="js/slider.js"></script>
-<script src="js/home.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/card.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/busca.js"></script>
+    <script src="js/home.js"></script>
 
 </body>
 
