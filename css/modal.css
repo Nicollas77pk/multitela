@@ -151,15 +151,9 @@ to{
 
 .modal-banner{
 
-    height:430px;
+    height:280px;
 
     flex-shrink:0;
-
-    background-size:cover;
-
-    background-position:center;
-
-    position:relative;
 
 }
 
@@ -440,7 +434,7 @@ to{
 =========================== */
 
 
-@media(max-width:768px){
+@media(max-width:1000px){
 
 
 .modal{
@@ -460,7 +454,7 @@ to{
 
 .modal-banner{
 
-    height:260px;
+    height:320px;
 
 }
 
@@ -468,9 +462,7 @@ to{
 
 .modal-content{
 
-    padding:22px;
-
-    max-height:55vh;
+padding:25px 35px 40px;
 
 }
 
@@ -478,11 +470,11 @@ to{
 
 .modal-content h1{
 
-    font-size:28px;
+font-size:36px;
+
+line-height:1.2;
 
 }
-
-
 
 }
 
