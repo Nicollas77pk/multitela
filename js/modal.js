@@ -12,6 +12,10 @@ const fecharModal = document.getElementById("fecharModal");
 
 async function abrirModal(id, tipo = "movie") {
 
+   console.log(id);
+
+console.log(tipo);
+   
    modal.classList.add("ativo");
 
 document.body.style.overflow="hidden";
