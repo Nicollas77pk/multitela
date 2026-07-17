@@ -551,6 +551,77 @@ line-height:1.2;
 
 
 
+.streaming-oferta{
+
+    margin-top:35px;
+
+    padding:24px;
+
+    border-radius:16px;
+
+    background:linear-gradient(
+        135deg,
+        #009687,
+        #00695c
+    );
+
+    text-align:center;
+
+}
+
+.streaming-oferta h3{
+
+    font-size:22px;
+
+    margin-bottom:12px;
+
+    color:#fff;
+
+}
+
+.streaming-oferta p{
+
+    color:#f3f3f3;
+
+    line-height:1.6;
+
+    margin-bottom:20px;
+
+}
+
+.streaming-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:14px 28px;
+
+    background:#fff;
+
+    color:#009687;
+
+    font-weight:bold;
+
+    border-radius:10px;
+
+    transition:.25s;
+
+}
+
+.streaming-btn:hover{
+
+    transform:translateY(-2px);
+
+    background:#f1f1f1;
+
+}
+
+
+
+
 /* ===========================
    TRAILER
 =========================== */
