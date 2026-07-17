@@ -260,15 +260,108 @@
 
 
 
+/* ==========================
+   GRID DAS CATEGORIAS
+========================== */
+
 .categoria-lista{
 
     display:grid;
 
-    grid-template-columns:
-    repeat(auto-fill,minmax(190px,1fr));
+    grid-template-columns:repeat(auto-fill,minmax(190px,1fr));
 
-    gap:25px;
+    gap:22px;
 
     margin-top:30px;
+
+    align-items:start;
+
+}
+
+/* Cards da página de categorias */
+
+.categoria-lista .card{
+
+    width:100%;
+
+    min-width:0;
+
+    max-width:none;
+
+}
+
+/* Poster */
+
+.categoria-lista .card img{
+
+    width:100%;
+
+    aspect-ratio:2/3;
+
+    height:auto;
+
+    object-fit:cover;
+
+}
+
+/* ==========================
+   TABLET
+========================== */
+
+@media (max-width:992px){
+
+    .categoria-lista{
+
+        grid-template-columns:repeat(3,1fr);
+
+        gap:18px;
+
+    }
+
+}
+
+/* ==========================
+   CELULAR
+========================== */
+
+@media (max-width:768px){
+
+    .categoria-lista{
+
+        grid-template-columns:repeat(2,1fr);
+
+        gap:14px;
+
+    }
+
+    .categoria-lista .card h3{
+
+        font-size:14px;
+
+        height:36px;
+
+    }
+
+    .categoria-lista .card-info{
+
+        padding:10px;
+
+    }
+
+}
+
+/* ==========================
+   CELULAR PEQUENO
+========================== */
+
+@media (max-width:420px){
+
+    .categoria-lista{
+
+        grid-template-columns:repeat(2,minmax(0,1fr));
+
+        gap:10px;
+
+    }
 
 }
