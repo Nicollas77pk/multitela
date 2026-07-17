@@ -3,6 +3,7 @@ const modalBanner = document.getElementById("modalBanner");
 const modalTitulo = document.getElementById("modalTitulo");
 const modalMeta = document.getElementById("modalMeta");
 const modalDescricao = document.getElementById("modalDescricao");
+const modalTrailer = document.getElementById("modalTrailer");
 const modalProviders = document.getElementById("modalProviders");
 const fecharModal = document.getElementById("fecharModal");
 
