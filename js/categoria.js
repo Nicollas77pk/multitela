@@ -143,7 +143,7 @@ async function carregarCategoria(){
 
 
 
-        const lista = dados.results.slice(0,10);
+        const lista = dados.results;
 
 
 
