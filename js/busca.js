@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const params = new URLSearchParams(window.location.search);
 
         termoBusca = params.get("q") || "";
+        const categoria = params.get("categoria");
 
         if (campo) campo.value = termoBusca;
 
