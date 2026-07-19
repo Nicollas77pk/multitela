@@ -248,3 +248,160 @@ async function pesquisarAutocomplete(texto){
 
 }
 
+/* ==========================================================
+   PESQUISAR
+========================================================== */
+
+function pesquisar(){
+
+    if(!Search.campo) return;
+
+    const texto = Search.campo.value.trim();
+
+    if(texto === "") return;
+
+    Search.termo = texto;
+
+    fecharAutocomplete();
+
+    let destino = "";
+
+    if(window.location.pathname.includes("/paginas/")){
+
+        destino = "busca.html";
+
+    }else{
+
+        destino = "paginas/busca.html";
+
+    }
+
+    window.location.href =
+        `${destino}?q=${encodeURIComponent(texto)}`;
+
+}
+
+/* ==========================================================
+   VERIFICA SE ESTÁ NA PÁGINA DE BUSCA
+========================================================== */
+
+function verificarPaginaBusca(){
+
+    if(!window.location.pathname.includes("busca.html")){
+
+        return;
+
+    }
+
+    const params = new URLSearchParams(window.location.search);
+
+    Search.termo = params.get("q") || "";
+
+    Search.pagina = 1;
+
+    Search.carregando = false;
+
+    if(Search.campo){
+
+        Search.campo.value = Search.termo;
+
+    }
+
+    const titulo = document.getElementById("tituloBusca");
+
+    if(titulo){
+
+        titulo.innerHTML =
+            `Resultados para "${Search.termo}"`;
+
+    }
+
+    carregarResultados();
+
+    window.addEventListener("scroll", scrollBusca);
+
+}
+
+/* ==========================================================
+   SCROLL INFINITO
+========================================================== */
+
+function scrollBusca(){
+
+    if(Search.carregando) return;
+
+    if(
+
+        window.innerHeight +
+
+        window.scrollY >=
+
+        document.body.offsetHeight - 800
+
+    ){
+
+        carregarResultados();
+
+    }
+
+}
+
+/* ==========================================================
+   CARREGA RESULTADOS
+========================================================== */
+
+async function carregarResultados(){
+
+    if(Search.carregando) return;
+
+    Search.carregando = true;
+
+    try{
+
+        const dados = await api(
+
+            `/search/multi?query=${encodeURIComponent(Search.termo)}&page=${Search.pagina}`
+
+        );
+
+        const resultados = dados.results.filter(item=>
+
+            item.poster_path &&
+
+            (
+
+                item.media_type==="movie" ||
+
+                item.media_type==="tv"
+
+            )
+
+        );
+
+        resultados.forEach(item=>{
+
+            renderizarCards(
+
+                "resultadoBusca",
+
+                [item],
+
+                item.media_type
+
+            );
+
+        });
+
+        Search.pagina++;
+
+    }
+
+    catch(error){
+
+        console.error(error);
+
+    }
+
+    Search.carregando = false;
+
+}
