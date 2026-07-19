@@ -304,18 +304,41 @@
    TABLET
 =========================== */
 
+/* ===========================
+   BOTÃO HAMBURGUER
+=========================== */
+
+.menu-toggle{
+
+    display:none;
+
+    background:none;
+
+    border:none;
+
+    color:#fff;
+
+    font-size:30px;
+
+    cursor:pointer;
+
+}
+
+
+
+/* ===========================
+   TABLET
+=========================== */
+
 
 @media(max-width:1100px){
 
 
 .header .container{
 
-
     flex-wrap:wrap;
 
-
     justify-content:center;
-
 
 }
 
@@ -323,12 +346,9 @@
 
 .menu{
 
-
     width:100%;
 
-
     justify-content:center;
-
 
 }
 
@@ -336,12 +356,9 @@
 
 .header-search{
 
-
     width:100%;
 
-
     justify-content:center;
-
 
 }
 
@@ -362,106 +379,9 @@
 
 .header .container{
 
+    width:100%;
 
     padding:15px;
-
-
-    gap:15px;
-
-
-}
-
-
-
-.logo{
-
-
-    width:100%;
-
-
-    text-align:center;
-
-
-    font-size:30px;
-
-
-}
-
-
-
-.menu{
-
-
-    gap:12px;
-
-
-}
-
-
-
-.menu a{
-
-
-    font-size:14px;
-
-
-}
-
-
-
-.header-search{
-
-
-    width:100%;
-
-
-}
-
-
-
-#campoBusca{
-
-
-    width:100%;
-
-
-}
-
-
-
-
-}
-
- /* ===========================
-   BOTÃO HAMBURGUER
-=========================== */
-
-
-.menu-toggle{
-
-    display:none;
-
-    background:none;
-
-    border:none;
-
-    color:white;
-
-    font-size:30px;
-
-    cursor:pointer;
-
-}
-
-/* ===========================
-   CELULAR PEQUENO
-=========================== */
-
-
-@media(max-width:768px){
-
-
-.header .container{
 
     position:relative;
 
@@ -471,37 +391,62 @@
 
 
 
+/* LOGO */
+
+.logo{
+
+    width:auto;
+
+    font-size:30px;
+
+}
+
+
+
+/* MOSTRA BOTÃO */
+
 .menu-toggle{
 
     display:block;
 
-    order:2;
+    margin-left:auto;
 
 }
 
 
 
-.logo{
-
-    order:1;
-
-}
-
-
+/* BUSCA */
 
 .header-search{
 
     order:3;
 
+    width:100%;
+
+    margin-top:15px;
+
 }
 
+
+
+#campoBusca{
+
+    width:100%;
+
+}
+
+
+
+/* MENU MOBILE */
 
 
 .menu{
 
     position:absolute;
 
-    top:70px;
+
+    top:75px;
+
 
     left:0;
 
@@ -514,13 +459,20 @@
 
     display:flex;
 
+
     flex-direction:column;
 
 
-    padding:20px;
+    align-items:center;
 
 
     gap:18px;
+
+
+    padding:25px;
+
+
+    border-bottom:1px solid #222;
 
 
     transform:translateY(-20px);
@@ -529,10 +481,13 @@
     opacity:0;
 
 
-    pointer-events:none;
+    visibility:hidden;
 
 
     transition:.3s;
+
+
+    z-index:2000;
 
 
 }
@@ -551,10 +506,58 @@
     opacity:1;
 
 
-    pointer-events:auto;
+    visibility:visible;
 
 
 }
+
+
+
+.menu a{
+
+    font-size:16px;
+
+}
+
+
+
+}
+
+
+
+
+
+/* ===========================
+   CELULAR PEQUENO
+=========================== */
+
+
+@media(max-width:420px){
+
+
+
+.logo{
+
+    font-size:26px;
+
+}
+
+
+
+.menu-toggle{
+
+    font-size:26px;
+
+}
+
+
+
+.menu a{
+
+    font-size:15px;
+
+}
+
 
 
 }
