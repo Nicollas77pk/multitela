@@ -61,19 +61,55 @@ function iniciarBusca() {
 
     const campo = document.getElementById("campoBusca");
 
+    if (!campo) return;
+
     const texto = campo.value.trim();
 
     if (!texto) return;
 
-    const estaEmPaginas =
-        window.location.pathname.includes("/paginas/");
+    let categoria = "";
 
-    const destino = estaEmPaginas
+    const pagina = window.location.pathname.toLowerCase();
+
+    if (pagina.includes("filmes")) {
+
+        categoria = "filmes";
+
+    } else if (pagina.includes("series")) {
+
+        categoria = "series";
+
+    } else if (pagina.includes("animes")) {
+
+        categoria = "animes";
+
+    } else if (pagina.includes("doramas")) {
+
+        categoria = "doramas";
+
+    } else if (pagina.includes("novelas")) {
+
+        categoria = "novelas";
+
+    } else if (pagina.includes("documentarios")) {
+
+        categoria = "documentarios";
+
+    }
+
+    const destino = pagina.includes("/paginas/")
         ? "busca.html"
         : "paginas/busca.html";
 
-    window.location.href =
-        `${destino}?q=${encodeURIComponent(texto)}`;
+    let url = `${destino}?q=${encodeURIComponent(texto)}`;
+
+    if (categoria) {
+
+        url += `&categoria=${categoria}`;
+
+    }
+
+    window.location.href = url;
 
 }
 
