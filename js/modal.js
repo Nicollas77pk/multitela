@@ -251,9 +251,9 @@ const LINK_PROVIDERS = {
 
     "Paramount Plus": "https://www.paramountplus.com/search/?q=",
 
-    "Apple TV+": "https://tv.apple.com/search?q=",
+    "Apple TV+": "https://tv.apple.com/br/search?q=",
 
-    "Apple TV Plus": "https://tv.apple.com/search?q=",
+    "Apple TV Plus": "https://tv.apple.com/br/search?q=",
 
     "Crunchyroll": "https://www.crunchyroll.com/search?q=",
 
