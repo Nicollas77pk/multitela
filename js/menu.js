@@ -1,22 +1,10 @@
-const menuToggle =
-document.getElementById("menuToggle");
+const botaoMenu = document.getElementById("menuToggle");
+
+const menu = document.getElementById("menu");
 
 
-const menu =
-document.getElementById("menu");
-
-
-
-if(menuToggle){
-
-
-menuToggle.addEventListener("click",()=>{
-
+botaoMenu.addEventListener("click",()=>{
 
     menu.classList.toggle("ativo");
 
-
 });
-
-
-}
