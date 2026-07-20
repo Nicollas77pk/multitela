@@ -1,60 +1,75 @@
 const menu = document.getElementById("menu");
-
 const menuToggle = document.getElementById("menuToggle");
 
-const overlay = document.getElementById("menuOverlay");
+if (menu && menuToggle) {
 
-function abrirMenu(){
+    menuToggle.addEventListener("click", () => {
 
-    menu.classList.add("ativo");
+        menu.classList.toggle("ativo");
 
-    overlay.classList.add("ativo");
+        if (menu.classList.contains("ativo")) {
 
-    menuToggle.innerHTML="✕";
+            menuToggle.innerHTML = "✕";
 
-    document.body.style.overflow="hidden";
+            menuToggle.setAttribute("aria-label", "Fechar menu");
 
-}
+        } else {
 
-function fecharMenu(){
+            menuToggle.innerHTML = "☰";
 
-    menu.classList.remove("ativo");
+            menuToggle.setAttribute("aria-label", "Abrir menu");
 
-    overlay.classList.remove("ativo");
+        }
 
-    menuToggle.innerHTML="☰";
-
-    document.body.style.overflow="";
+    });
 
 }
 
-menuToggle.addEventListener("click",()=>{
+/* Fecha ao clicar em um link */
 
-    if(menu.classList.contains("ativo")){
+document.querySelectorAll(".menu a").forEach(link => {
 
-        fecharMenu();
+    link.addEventListener("click", () => {
 
-    }else{
+        menu.classList.remove("ativo");
 
-        abrirMenu();
+        menuToggle.innerHTML = "☰";
+
+    });
+
+});
+
+/* Fecha clicando fora */
+
+document.addEventListener("click", e => {
+
+    if (
+
+        menu.classList.contains("ativo") &&
+
+        !menu.contains(e.target) &&
+
+        !menuToggle.contains(e.target)
+
+    ) {
+
+        menu.classList.remove("ativo");
+
+        menuToggle.innerHTML = "☰";
 
     }
 
 });
 
-overlay.addEventListener("click",fecharMenu);
+/* Fecha ao voltar para desktop */
 
-document.querySelectorAll(".menu a").forEach(link=>{
+window.addEventListener("resize", () => {
 
-    link.addEventListener("click",fecharMenu);
+    if (window.innerWidth > 768) {
 
-});
+        menu.classList.remove("ativo");
 
-window.addEventListener("resize",()=>{
-
-    if(window.innerWidth>768){
-
-        fecharMenu();
+        menuToggle.innerHTML = "☰";
 
     }
 
