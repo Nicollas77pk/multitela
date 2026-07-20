@@ -304,7 +304,7 @@
 
 .menu-toggle{
 
-    display:block;
+    display:flex;
 
     order:1;
 
