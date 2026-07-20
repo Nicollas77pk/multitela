@@ -288,15 +288,21 @@
 
 @media(max-width:768px){
 
-.header .container{
+.header{
 
-    display:grid;
+    position:sticky;
 
-    grid-template-columns:1fr auto;
+    top:0;
 
-    align-items:center;
+    left:0;
 
-    gap:15px;
+    width:100%;
+
+    z-index:1000000;
+
+    background:#0d0d0d;
+
+    border-bottom:1px solid #1d1d1d;
 
 }
 
