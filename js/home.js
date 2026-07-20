@@ -140,12 +140,6 @@ async function mostrarBanner(){
 
 }
 
-#hero{
-
-    transition:opacity .5s ease;
-
-}
-transition: opacity .5s ease;
 
 /* ==========================================
    HERO CLICK
