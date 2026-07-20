@@ -3,31 +3,38 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Buscar Conteúdo - MultiTela</title>
 
-    <meta name="description"
-          content="Resultados da busca do MultiTela">
+<title>MultiTela - Filmes</title>
 
-    <link rel="icon"
-          href="../imagens/favicon.png">
 
-    <link rel="stylesheet" href="../css/variables.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/header.css">
-    <link rel="stylesheet" href="../css/cards.css">
-    <link rel="stylesheet" href="../css/modal.css">
-    <link rel="stylesheet" href="../css/footer.css">
+<meta name="description"
+content="Filmes online, descubra onde assistir seus filmes favoritos.">
+
+
+<link rel="icon" href="../imagens/favicon.png">
+
+
+<link rel="stylesheet" href="../css/variables.css">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/header.css">
+<link rel="stylesheet" href="../css/cards.css">
+<link rel="stylesheet" href="../css/modal.css">
+<link rel="stylesheet" href="../css/footer.css">
+<link rel="stylesheet" href="../css/autocomplete.css">
+
 
 </head>
 
+
 <body>
 
-        <!-- HEADER -->
+
+
+    <!-- HEADER -->
 
   <header class="header">
 
@@ -126,105 +133,148 @@
     </div>
 
 </header>
-    <!-- RESULTADOS -->
 
-    <section class="container secao">
 
-        <div class="section-title">
 
-            <h2 id="tituloBusca">
+<!-- CONTEÚDO -->
 
-                Resultados da busca
 
-            </h2>
+<section class="container secao">
 
-        </div>
 
-        <div
+<div class="section-title">
 
-            id="resultadoBusca"
 
-            class="categoria-lista">
+<h2>
 
-        </div>
+Filmes
 
-    </section>
+</h2>
 
-    <!-- MODAL -->
 
-    <div id="modal" class="modal">
+</div>
 
-        <div class="modal-box">
 
-            <div
-                id="modalBanner"
-                class="modal-banner">
 
-                <button
-                    id="fecharModal"
-                    class="modal-close">
+<div
+id="resultadoBusca"
+class="categoria-lista">
 
-                    ✕
 
-                </button>
+</div>
 
-            </div>
 
-            <div class="modal-content">
 
-                <h1 id="modalTitulo"></h1>
-
-                <div
-                    id="modalMeta"
-                    class="modal-meta">
-
-                </div>
-
-                <p
-                    id="modalDescricao"
-                    class="modal-description">
-
-                </p>
+</section>
 
 
 
 
- <div id="modalTrailer">
-    
-    </div>
+
+<!-- MODAL -->
+
+
+<div id="modal" class="modal">
+
+
+<div class="modal-box">
+
+
+<div
+id="modalBanner"
+class="modal-banner">
+
+
+<button
+id="fecharModal"
+class="modal-close">
+
+✕
+
+</button>
+
+
+</div>
 
 
 
-                
+<div class="modal-content">
 
-                <div id="modalProviders">
 
-                </div>
+<h1 id="modalTitulo"></h1>
 
-            </div>
 
-        </div>
 
-    </div>
+<div
+id="modalMeta"
+class="modal-meta">
 
-    <!-- FOOTER -->
+</div>
 
-    <footer>
 
-        © 2026 MultiTela
 
-    </footer>
+<p
+id="modalDescricao"
+class="modal-description">
 
-    <!-- JAVASCRIPT -->
+</p>
 
-    <script src="../js/config.js"></script>
-    <script src="../js/api.js"></script>
-    <script src="../js/card.js"></script>
-    <script src="../js/modal.js"></script>
-    <script src="../js/busca.js"></script>
+
+
+<div id="modalTrailer">
+
+</div>
+
+
+
+<div id="modalProviders">
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<footer>
+
+
+© 2026 MultiTela
+
+
+</footer>
+
+
+
+
+
+<script src="../js/config.js"></script>
+
+<script src="../js/api.js"></script>
+
+<script src="../js/card.js"></script>
+
+<script src="../js/modal.js"></script>
+
+<script src="../js/categoria.js"></script>
+
+<script src="../js/search.js"></script>
+
     <script src="../js/menu.js"></script>
-    <script src="../js/autocomplete.js"></script>
+  
+<script src="../js/autocomplete.js"></script>
+
 
 </body>
+
 
 </html>
