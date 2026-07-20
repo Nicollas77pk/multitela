@@ -308,9 +308,19 @@
 
 .menu-toggle{
 
-    display:block;
+    display:none;
 
-    grid-column:2;
+    background:none;
+
+    border:none;
+
+    color:white;
+
+    font-size:34px;
+
+    cursor:pointer;
+
+    margin-left:auto;
 
 }
 
