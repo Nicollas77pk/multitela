@@ -1,84 +1,75 @@
-/* ==========================================
-   MENU MOBILE
-========================================== */
-
 const menu = document.getElementById("menu");
-
 const menuToggle = document.getElementById("menuToggle");
 
+if (menu && menuToggle) {
 
-if(menu && menuToggle){
-
-    menuToggle.addEventListener("click",()=>{
+    menuToggle.addEventListener("click", () => {
 
         menu.classList.toggle("ativo");
 
-        menuToggle.innerHTML =
+        if (menu.classList.contains("ativo")) {
 
-            menu.classList.contains("ativo")
+            menuToggle.innerHTML = "✕";
 
-            ? "✕"
+            menuToggle.setAttribute("aria-label", "Fechar menu");
 
-            : "☰";
+        } else {
+
+            menuToggle.innerHTML = "☰";
+
+            menuToggle.setAttribute("aria-label", "Abrir menu");
+
+        }
 
     });
 
 }
 
+/* Fecha ao clicar em um link */
 
-/* ==========================================
-   FECHA AO CLICAR NO LINK
-========================================== */
+document.querySelectorAll(".menu a").forEach(link => {
 
-document.querySelectorAll(".menu a").forEach(link=>{
-
-    link.addEventListener("click",()=>{
+    link.addEventListener("click", () => {
 
         menu.classList.remove("ativo");
 
-        menuToggle.innerHTML="☰";
+        menuToggle.innerHTML = "☰";
 
     });
 
 });
 
+/* Fecha clicando fora */
 
-/* ==========================================
-   FECHA CLICANDO FORA
-========================================== */
+document.addEventListener("click", e => {
 
-document.addEventListener("click",(e)=>{
+    if (
 
-    if(
+        menu.classList.contains("ativo") &&
 
-        !menu.contains(e.target)
-
-        &&
+        !menu.contains(e.target) &&
 
         !menuToggle.contains(e.target)
 
-    ){
+    ) {
 
         menu.classList.remove("ativo");
 
-        menuToggle.innerHTML="☰";
+        menuToggle.innerHTML = "☰";
 
     }
 
 });
 
+/* Fecha ao voltar para desktop */
 
-/* ==========================================
-   VOLTOU PARA DESKTOP
-========================================== */
+window.addEventListener("resize", () => {
 
-window.addEventListener("resize",()=>{
-
-    if(window.innerWidth>768){
+    if (window.innerWidth > 768) {
 
         menu.classList.remove("ativo");
 
-        menuToggle.innerHTML="☰";
+        menuToggle.innerHTML = "☰";
 
     }
 
