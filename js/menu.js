@@ -1,75 +1,60 @@
 const menu = document.getElementById("menu");
+
 const menuToggle = document.getElementById("menuToggle");
 
-if (menu && menuToggle) {
+const overlay = document.getElementById("menuOverlay");
 
-    menuToggle.addEventListener("click", () => {
+function abrirMenu(){
 
-        menu.classList.toggle("ativo");
+    menu.classList.add("ativo");
 
-        if (menu.classList.contains("ativo")) {
+    overlay.classList.add("ativo");
 
-            menuToggle.innerHTML = "✕";
+    menuToggle.innerHTML="✕";
 
-            menuToggle.setAttribute("aria-label", "Fechar menu");
-
-        } else {
-
-            menuToggle.innerHTML = "☰";
-
-            menuToggle.setAttribute("aria-label", "Abrir menu");
-
-        }
-
-    });
+    document.body.style.overflow="hidden";
 
 }
 
-/* Fecha ao clicar em um link */
+function fecharMenu(){
 
-document.querySelectorAll(".menu a").forEach(link => {
+    menu.classList.remove("ativo");
 
-    link.addEventListener("click", () => {
+    overlay.classList.remove("ativo");
 
-        menu.classList.remove("ativo");
+    menuToggle.innerHTML="☰";
 
-        menuToggle.innerHTML = "☰";
+    document.body.style.overflow="";
 
-    });
+}
 
-});
+menuToggle.addEventListener("click",()=>{
 
-/* Fecha clicando fora */
+    if(menu.classList.contains("ativo")){
 
-document.addEventListener("click", e => {
+        fecharMenu();
 
-    if (
+    }else{
 
-        menu.classList.contains("ativo") &&
-
-        !menu.contains(e.target) &&
-
-        !menuToggle.contains(e.target)
-
-    ) {
-
-        menu.classList.remove("ativo");
-
-        menuToggle.innerHTML = "☰";
+        abrirMenu();
 
     }
 
 });
 
-/* Fecha ao voltar para desktop */
+overlay.addEventListener("click",fecharMenu);
 
-window.addEventListener("resize", () => {
+document.querySelectorAll(".menu a").forEach(link=>{
 
-    if (window.innerWidth > 768) {
+    link.addEventListener("click",fecharMenu);
 
-        menu.classList.remove("ativo");
+});
 
-        menuToggle.innerHTML = "☰";
+window.addEventListener("resize",()=>{
+
+    if(window.innerWidth>768){
+
+        fecharMenu();
 
     }
 
