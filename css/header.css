@@ -366,6 +366,16 @@
 
     box-shadow:15px 0 35px rgba(0,0,0,.5);
 
+    overflow-y:auto;
+
+    overflow-x:hidden;
+
+    -webkit-overflow-scrolling:touch;
+
+    scrollbar-width:thin;
+
+    scrollbar-color:#009687 #111;
+
 }
 
 .menu.ativo{
@@ -424,5 +434,35 @@
     opacity:1;
 
     visibility:visible;
+
+}
+
+
+
+/* Scroll do menu */
+
+.menu::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+.menu::-webkit-scrollbar-track{
+
+    background:#111;
+
+}
+
+.menu::-webkit-scrollbar-thumb{
+
+    background:#009687;
+
+    border-radius:20px;
+
+}
+
+.menu::-webkit-scrollbar-thumb:hover{
+
+    background:#00b8a6;
 
 }
