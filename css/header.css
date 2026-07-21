@@ -76,27 +76,9 @@
 
     flex:1;
 
-    overflow-x:auto;
-
-    overflow-y:hidden;
-
-    white-space:nowrap;
-
-    scrollbar-width:none;
-
-    -ms-overflow-style:none;
-
-}
-
-.menu::-webkit-scrollbar{
-
-    display:none;
-
 }
 
 .menu a{
-
-    flex-shrink:0;
 
     color:#fff;
 
@@ -490,7 +472,7 @@
 
     transition:left .35s ease;
 
-    z-index:999999;
+    z-index:1099999;
 
     box-shadow:15px 0 35px rgba(0,0,0,.5);
 
@@ -595,6 +577,10 @@
 
 }
 
+.menu-dropdown{
 
+    display:none;
+
+}
 
 
