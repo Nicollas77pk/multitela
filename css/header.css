@@ -38,7 +38,7 @@
 
     gap:30px;
 
-   
+    overflow:hidden;
 
 }
 /* ==========================================
@@ -76,9 +76,27 @@
 
     flex:1;
 
+    overflow-x:auto;
+
+    overflow-y:hidden;
+
+    white-space:nowrap;
+
+    scrollbar-width:none;
+
+    -ms-overflow-style:none;
+
+}
+
+.menu::-webkit-scrollbar{
+
+    display:none;
+
 }
 
 .menu a{
+
+    flex-shrink:0;
 
     color:#fff;
 
@@ -93,112 +111,6 @@
 }
 
 .menu a:hover{
-
-    color:#00b8a6;
-
-}
-
-/* ==========================================
-   DROPDOWN MAIS
-========================================== */
-
-.menu-dropdown{
-
-    position:relative;
-
-    z-index:1000003;
-
-}
-
-.btn-mais{
-
-    background:none;
-
-    border:none;
-
-    color:#fff;
-
-    font-size:15px;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-    padding:0;
-
-}
-
-.btn-mais:hover{
-
-    color:#00b8a6;
-
-}
-
-.submenu{
-
-    position:absolute;
-
-    top:40px;
-
-    left:0;
-
-    width:230px;
-
-    background:#181818;
-
-    border-radius:12px;
-
-    overflow:hidden;
-
-    box-shadow:0 20px 50px rgba(0,0,0,.55);
-
-    opacity:0;
-
-    visibility:hidden;
-
-    transform:translateY(10px);
-
-    transition:.25s;
-
-    z-index:1000004;
-
-}
-
-.submenu.ativo{
-
-    opacity:1;
-
-    visibility:visible;
-
-    transform:translateY(0);
-
-}
-
-.submenu a{
-
-    display:block;
-
-    padding:14px 18px;
-
-    color:#fff;
-
-    text-decoration:none;
-
-    border-bottom:1px solid #252525;
-
-    transition:.25s;
-
-}
-
-.submenu a:last-child{
-
-    border:none;
-
-}
-
-.submenu a:hover{
-
-    background:#222;
 
     color:#00b8a6;
 
@@ -452,6 +364,7 @@
 
 /* MENU LATERAL */
 
+
 .menu{
 
     position:fixed;
@@ -579,10 +492,6 @@
 
 }
 
-.menu-dropdown{
 
-    display:none;
-
-}
 
 
