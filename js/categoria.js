@@ -67,6 +67,14 @@ document.addEventListener("DOMContentLoaded",()=>{
 
     }
 
+        else if(caminho.includes("desenhos")){
+
+    endpointAtual="/discover/tv?with_genres=16";
+
+    tipoAtual="tv";
+
+}
+
 
     else if(caminho.includes("novelas")){
 
