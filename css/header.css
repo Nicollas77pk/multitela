@@ -38,9 +38,8 @@
 
     gap:30px;
 
-    overflow:hidden;
-
 }
+
 /* ==========================================
    LOGO
 ========================================== */
@@ -74,29 +73,9 @@
 
     margin-left:20px;
 
-    flex:1;
-
-    overflow-x:auto;
-
-    overflow-y:hidden;
-
-    white-space:nowrap;
-
-    scrollbar-width:none;
-
-    -ms-overflow-style:none;
-
-}
-
-.menu::-webkit-scrollbar{
-
-    display:none;
-
 }
 
 .menu a{
-
-    flex-shrink:0;
 
     color:#fff;
 
@@ -115,21 +94,18 @@
     color:#00b8a6;
 
 }
+
 /* ==========================================
    BUSCA
 ========================================== */
 
 .header-search{
 
-    width:340px;
-
-    min-width:340px;
-
-    margin-left:20px;
+    margin-left:auto;
 
     position:relative;
 
-    flex-shrink:0;
+    width:340px;
 
 }
 
@@ -233,35 +209,20 @@
 
     display:none;
 
-    width:46px;
-
-    height:46px;
+    background:none;
 
     border:none;
 
-    border-radius:12px;
+    color:white;
 
-    background:#1b1b1b;
-
-    color:#fff;
-
-    font-size:28px;
+    font-size:34px;
 
     cursor:pointer;
 
-    transition:.3s;
-
-    align-items:center;
-
-    justify-content:center;
+    margin-left:auto;
 
 }
 
-.menu-toggle:hover{
-
-    background:#009687;
-
-}
 /* ==========================================
    TABLET
 ========================================== */
@@ -328,7 +289,7 @@
 
 .menu-toggle{
 
-    display:flex;
+    display:block;
 
     order:1;
 
@@ -382,25 +343,21 @@
 
     flex-direction:column;
 
+    align-items:flex-start;
+
+    gap:0;
+
     padding-top:90px;
 
-    transition:left .35s ease;
+    transition:.35s;
 
-    z-index:1099999;
+    z-index:999999;
 
-    box-shadow:15px 0 35px rgba(0,0,0,.5);
-
-    overflow-y:auto;
-
-    overflow-x:hidden;
-
-    -webkit-overflow-scrolling:touch;
-
-    scrollbar-width:thin;
-
-    scrollbar-color:#009687 #111;
+    box-shadow:15px 0 40px rgba(0,0,0,.45);
 
 }
+
+/* MENU ABERTO */
 
 .menu.ativo{
 
@@ -408,32 +365,25 @@
 
 }
 
+/* LINKS */
+
 .menu a{
 
     width:100%;
 
     padding:18px 30px;
 
-    color:#fff;
-
-    text-decoration:none;
+    border-bottom:1px solid #222;
 
     font-size:17px;
 
-    border-bottom:1px solid #222;
-
 }
 
-.menu a:hover{
+/* OVERLAY */
 
-    background:#1d1d1d;
+.menu::after{
 
-    color:#00b8a6;
-
-}
-
-
-.menu-overlay{
+    content:"";
 
     position:fixed;
 
@@ -441,159 +391,22 @@
 
     background:rgba(0,0,0,.65);
 
-    backdrop-filter:blur(5px);
+    z-index:-1;
 
     opacity:0;
 
-    visibility:hidden;
+    pointer-events:none;
 
-    transition:.3s;
-
-    z-index:999998;
+    transition:.35s;
 
 }
 
-.menu-overlay.ativo{
+.menu.ativo::after{
 
     opacity:1;
 
-    visibility:visible;
+    pointer-events:auto;
 
 }
-
-
-
-/* Scroll do menu */
-
-.menu::-webkit-scrollbar{
-
-    width:8px;
-
-}
-
-.menu::-webkit-scrollbar-track{
-
-    background:#111;
-
-}
-
-.menu::-webkit-scrollbar-thumb{
-
-    background:#009687;
-
-    border-radius:20px;
-
-}
-
-.menu::-webkit-scrollbar-thumb:hover{
-
-    background:#00b8a6;
-
-}
-
-
-
-
-/* ==========================================
-   DROPDOWN MAIS
-========================================== */
-
-.menu-dropdown{
-
-    position:relative;
-
-}
-
-.btn-mais{
-
-    background:none;
-
-    border:none;
-
-    color:#fff;
-
-    font-size:15px;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-    padding:0;
-
-}
-
-.btn-mais:hover{
-
-    color:#00b8a6;
-
-}
-
-.submenu{
-
-    position:absolute;
-
-    top:40px;
-
-    left:0;
-
-    width:230px;
-
-    background:#181818;
-
-    border-radius:12px;
-
-    overflow:hidden;
-
-    box-shadow:0 20px 50px rgba(0,0,0,.55);
-
-    opacity:0;
-
-    visibility:hidden;
-
-    transform:translateY(10px);
-
-    transition:.25s;
-
-    z-index:99999;
-
-}
-
-.submenu.ativo{
-
-    opacity:1;
-
-    visibility:visible;
-
-    transform:translateY(0);
-
-}
-
-.submenu a{
-
-    display:block;
-
-    padding:14px 18px;
-
-    color:#fff;
-
-    text-decoration:none;
-
-    border-bottom:1px solid #252525;
-
-    transition:.25s;
-
-}
-
-.submenu a:last-child{
-
-    border:none;
-
-}
-
-.submenu a:hover{
-
-    background:#222;
-
-    color:#00b8a6;
 
 }
