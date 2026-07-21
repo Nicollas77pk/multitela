@@ -38,8 +38,9 @@
 
     gap:30px;
 
-}
+    overflow:hidden;
 
+}
 /* ==========================================
    LOGO
 ========================================== */
@@ -83,6 +84,8 @@
 
     scrollbar-width:none;
 
+    -ms-overflow-style:none;
+
 }
 
 .menu::-webkit-scrollbar{
@@ -112,18 +115,21 @@
     color:#00b8a6;
 
 }
-
 /* ==========================================
    BUSCA
 ========================================== */
 
 .header-search{
 
-    margin-left:auto;
+    width:340px;
+
+    min-width:340px;
+
+    margin-left:20px;
 
     position:relative;
 
-    width:340px;
+    flex-shrink:0;
 
 }
 
