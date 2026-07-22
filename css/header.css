@@ -25,6 +25,7 @@
 ========================================== */
 
 .header .container{
+.header .container{
 
     max-width:1450px;
 
@@ -36,9 +37,9 @@
 
     align-items:center;
 
-    gap:30px;
+    gap:24px;
 
-    overflow:hidden;
+    overflow:visible;
 
 }
 /* ==========================================
@@ -70,27 +71,13 @@
 
     align-items:center;
 
-    gap:22px;
+    gap:18px;
 
-    margin-left:20px;
+    margin-left:18px;
 
     flex:1;
 
-    overflow-x:auto;
-
-    overflow-y:hidden;
-
     white-space:nowrap;
-
-    scrollbar-width:none;
-
-    -ms-overflow-style:none;
-
-}
-
-.menu::-webkit-scrollbar{
-
-    display:none;
 
 }
 
@@ -121,11 +108,11 @@
 
 .header-search{
 
-    width:340px;
+    width:320px;
 
-    min-width:340px;
+    min-width:320px;
 
-    margin-left:20px;
+    margin-left:auto;
 
     position:relative;
 
@@ -387,9 +374,9 @@
 
     transition:left .35s ease;
 
-    z-index:1099999;
+    z-index:1000002;
 
-    box-shadow:15px 0 35px rgba(0,0,0,.5);
+    box-shadow:15px 0 35px rgba(0,0,0,.55);
 
     overflow-y:auto;
 
@@ -403,11 +390,40 @@
 
 }
 
-.menu.ativo{
+   .menu.ativo{
 
     left:0;
 
+   }
+
+   .menu-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.55);
+
+    backdrop-filter:blur(4px);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.3s;
+
+    z-index:1000001;
+
 }
+
+.menu-overlay.ativo{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
 
 .menu a{
 
