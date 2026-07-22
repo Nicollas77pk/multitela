@@ -382,33 +382,38 @@
    MENU LATERAL
 =========================== */
 
+
 .menu{
 
     position:fixed;
 
     top:0;
-    left:-320px;
+
+    left:-100%;
 
     width:300px;
 
+    max-width:85vw;
+
     height:100dvh;
-    max-height:100dvh;
 
     background:#111;
 
     display:flex;
+
     flex-direction:column;
 
-    padding:90px 0 30px;
+    flex-wrap:nowrap;
+
+    gap:0;
+
+    padding:80px 0 30px;
 
     transition:left .35s ease;
 
     z-index:1000002;
 
-    box-shadow:15px 0 35px rgba(0,0,0,.55);
-
-    overflow-y:scroll;
-    overflow-x:hidden;
+    overflow:auto;
 
     overscroll-behavior:contain;
 
@@ -416,19 +421,15 @@
 
 }
 
-/* MENU ABERTO */
-
 .menu.ativo{
 
     left:0;
 
 }
 
-/* LINKS */
-
 .menu a{
 
-    flex:0 0 auto;
+    display:block;
 
     width:100%;
 
@@ -441,6 +442,8 @@
     font-size:17px;
 
     border-bottom:1px solid #222;
+
+    flex:none;
 
 }
 
@@ -462,8 +465,6 @@
 
     background:rgba(0,0,0,.55);
 
-    backdrop-filter:blur(4px);
-
     opacity:0;
 
     visibility:hidden;
@@ -482,32 +483,6 @@
 
 }
 
-/* SCROLL */
 
-.menu::-webkit-scrollbar{
-
-    width:8px;
-
-}
-
-.menu::-webkit-scrollbar-track{
-
-    background:#111;
-
-}
-
-.menu::-webkit-scrollbar-thumb{
-
-    background:#009687;
-
-    border-radius:20px;
-
-}
-
-.menu::-webkit-scrollbar-thumb:hover{
-
-    background:#00b8a6;
-
-}
 
 }
