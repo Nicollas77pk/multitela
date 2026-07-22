@@ -160,8 +160,47 @@
 
     border-radius:50%;
 
+    background:linear-gradient(135deg,#00b8a6,#009687);
+
+    color:#fff;
+
+    cursor:pointer;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    transition:.25s;
+
+    box-shadow:0 8px 18px rgba(0,184,166,.35);
+
 }
 
+#btnBusca svg{
+
+    width:18px;
+
+    height:18px;
+
+    transition:.25s;
+
+}
+
+#btnBusca:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:0 12px 24px rgba(0,184,166,.5);
+
+}
+
+#btnBusca:hover svg{
+
+    transform:rotate(-12deg);
+
+}
 /* ==========================================
    AUTOCOMPLETE
 ========================================== */
