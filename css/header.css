@@ -34,7 +34,7 @@
 
     display:flex;
 
-    align-items:center;
+    align-items:flex-start;
 
     gap:24px;
 
@@ -68,21 +68,21 @@
 
     display:flex;
 
+    flex-wrap:wrap;
+
     align-items:center;
 
-    gap:18px;
-
-    margin-left:18px;
+    gap:12px 18px;
 
     flex:1;
 
-    white-space:nowrap;
+    margin-left:18px;
+
+    white-space:normal;
 
 }
 
 .menu a{
-
-    flex-shrink:0;
 
     color:#fff;
 
@@ -93,6 +93,8 @@
     font-weight:500;
 
     transition:.25s;
+
+    line-height:1.2;
 
 }
 
@@ -117,8 +119,9 @@
 
     flex-shrink:0;
 
-}
+    align-self:flex-start;
 
+}
 #campoBusca{
 
     width:100%;
