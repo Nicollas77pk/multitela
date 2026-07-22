@@ -6,55 +6,41 @@ const menu = document.getElementById("menu");
 const menuToggle = document.getElementById("menuToggle");
 const overlay = document.getElementById("menuOverlay");
 
-function fecharMenu() {
-
-    if (!menu || !menuToggle) return;
-
-    menu.classList.remove("ativo");
-
-    if (overlay) {
-
-        overlay.classList.remove("ativo");
-
-    }
-
-    menuToggle.innerHTML = "☰";
-
-    menuToggle.setAttribute(
-        "aria-label",
-        "Abrir menu"
-    );
-
-}
-
 function abrirMenu() {
 
     menu.classList.add("ativo");
 
-    if (overlay) {
-
-        overlay.classList.add("ativo");
-
-    }
+    overlay?.classList.add("ativo");
 
     menuToggle.innerHTML = "✕";
 
-    menuToggle.setAttribute(
-        "aria-label",
-        "Fechar menu"
-    );
+    menuToggle.setAttribute("aria-label", "Fechar menu");
 
 }
 
-if (menu && menuToggle) {
+function fecharMenu() {
 
-    menuToggle.addEventListener("click", function () {
+    menu.classList.remove("ativo");
 
-        if (menu.classList.contains("ativo")) {
+    overlay?.classList.remove("ativo");
+
+    menuToggle.innerHTML = "☰";
+
+    menuToggle.setAttribute("aria-label", "Abrir menu");
+
+}
+
+if(menu && menuToggle){
+
+    menuToggle.addEventListener("click", function(e){
+
+        e.stopPropagation();
+
+        if(menu.classList.contains("ativo")){
 
             fecharMenu();
 
-        } else {
+        }else{
 
             abrirMenu();
 
@@ -68,45 +54,24 @@ if (menu && menuToggle) {
    FECHA AO CLICAR EM UM LINK
 ========================================== */
 
-document.querySelectorAll(".menu a").forEach(link => {
+document.querySelectorAll(".menu a").forEach(link=>{
 
     link.addEventListener("click", fecharMenu);
 
 });
 
 /* ==========================================
-   FECHA AO CLICAR NO OVERLAY
+   FECHA AO CLICAR FORA
 ========================================== */
 
-if (overlay) {
+document.addEventListener("click",function(e){
 
-    overlay.addEventListener("click", fecharMenu);
+    if(!menu.classList.contains("ativo")) return;
 
-}
-
-/* ==========================================
-   FECHA COM ESC
-========================================== */
-
-document.addEventListener("keydown", function (e) {
-
-    if (e.key === "Escape") {
-
-        fecharMenu();
-
-        fecharDropdown();
-
-    }
-
-});
-
-/* ==========================================
-   VOLTAR PARA DESKTOP
-========================================== */
-
-window.addEventListener("resize", function () {
-
-    if (window.innerWidth > 768) {
+    if(
+        !menu.contains(e.target) &&
+        !menuToggle.contains(e.target)
+    ){
 
         fecharMenu();
 
@@ -114,3 +79,42 @@ window.addEventListener("resize", function () {
 
 });
 
+/* ==========================================
+   OVERLAY
+========================================== */
+
+overlay?.addEventListener("click", fecharMenu);
+
+/* ==========================================
+   ESC
+========================================== */
+
+document.addEventListener("keydown",function(e){
+
+    if(e.key==="Escape"){
+
+        fecharMenu();
+
+        if(typeof fecharDropdown==="function"){
+
+            fecharDropdown();
+
+        }
+
+    }
+
+});
+
+/* ==========================================
+   DESKTOP
+========================================== */
+
+window.addEventListener("resize",function(){
+
+    if(window.innerWidth>768){
+
+        fecharMenu();
+
+    }
+
+});
