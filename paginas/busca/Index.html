@@ -1,0 +1,370 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>MultiTela - Onde assistir séries Online - onde assistir Desenhos</title>
+
+
+<meta name="description"
+content="Desenhos online, descubra onde assistir seus desenhos favoritos.">
+
+
+<link rel="icon" href="../imagens/favicon.png">
+
+
+<link rel="stylesheet" href="../../css/variables.css">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/header.css">
+<link rel="stylesheet" href="../../css/cards.css">
+<link rel="stylesheet" href="../../css/modal.css">
+<link rel="stylesheet" href="../../css/footer.css">
+<link rel="stylesheet" href="../../css/autocomplete.css">
+
+
+</head>
+
+
+<body>
+
+
+
+   <!-- HEADER -->
+
+  <header class="header">
+
+    <div class="container">
+
+        <!-- LOGO -->
+
+        <a href="/" class="logo">
+
+            <img
+                src="/imagens/MultiTela.png"
+                alt="MultiTela">
+
+        </a>
+
+        <!-- MENU MOBILE -->
+
+        <button
+            class="menu-toggle"
+            id="menuToggle">
+
+            ☰
+
+        </button>
+
+      <!-- MENU -->
+
+        <nav
+            class="menu"
+            id="menu">
+
+            <a href="/">
+
+                Home
+
+            </a>
+
+            <a href="/paginas/onde-assistir-filmes-online">
+
+                Filmes
+
+            </a>
+
+            <a href="/paginas/onde-assistir-series-online">
+
+                Séries
+
+            </a>
+
+            <a href="/paginas/onde-assistir-animes-online">
+
+                Animes
+
+            </a>
+          
+          <a href="/paginas/onde-assistir-desenhos-online">
+
+               Desenhos
+
+            </a>
+
+            <a href="/paginas/onde-assistir-doramas-online">
+
+                Doramas
+
+            </a>
+
+            <a href="/paginas/onde-assistir-novelas-online">
+
+                Novelas
+
+            </a>
+          
+          <a href="/paginas/onde-assistir-novelas-turcas-online">
+
+                Novelas Turcas
+
+            </a>
+
+            <a href="/paginas/onde-assistir-documentario-online">
+
+                Documentários
+
+            </a>
+          
+          <a href="/paginas/onde-assistir-filmes-de-terror-online">
+
+                Terror
+
+            </a>
+          
+          <a href="/paginas/onde-assistir-filmes-de-suspense-online">
+
+                Suspense
+
+            </a>
+          
+          <a href="/paginas/onde-assistir-filmes-de-drama-online">
+
+                Drama
+
+            </a>
+          
+          <a href="/paginas/onde-assistir-filmes-de-romance-online">
+
+                Romance
+
+            </a>
+          
+          <a href="/paginas/onde-assistir-filmes-de-guerra-online">
+
+                Guerra
+
+            </a>
+          
+          <a href="/paginas/onde-assistir-filmes-de-ficcao-online">
+
+                Ficção
+
+            </a>
+          
+          <a href="/paginas/onde-assistir-filmes-de-comedia-online">
+
+                Comédia
+
+            </a>
+          
+        
+          
+          <a href="/paginas/onde-assistir-filmes-de-aventura-online">
+
+                Aventura
+
+            </a>
+          
+           <a href="/paginas/onde-assistir-filmes-de-fantasia-online">
+
+                Fantasia
+
+            </a>
+          
+           <a href="/paginas/onde-assistir-filmes-de-acao-online">
+
+                Ação
+
+            </a>
+          
+           <a href="/paginas/onde-assistir-filmes-de-crimes-online">
+
+                Crimes
+
+            </a>
+
+        </nav>
+        
+        <!-- BUSCA -->
+
+        <div class="header-search">
+
+            <input
+
+                id="campoBusca"
+
+                type="search"
+
+                autocomplete="off"
+
+                placeholder="Buscar desenhos, séries, animes...">
+
+            <button id="btnBusca" aria-label="Buscar">
+
+<svg
+viewBox="0 0 24 24"
+fill="none"
+stroke="currentColor"
+stroke-width="2.4"
+stroke-linecap="round"
+stroke-linejoin="round">
+
+<circle cx="11" cy="11" r="7"></circle>
+
+<line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+
+</svg>
+
+</button>
+
+            <div id="autocompleteBusca"></div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- CONTEÚDO -->
+
+
+<section class="container secao">
+
+
+<div class="section-title">
+
+
+<h2>
+
+Resultados
+
+</h2>
+
+
+</div>
+
+
+
+<div
+id="lista-resultadoBusca"
+class="categoria-lista">
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+<!-- MODAL -->
+
+
+<div id="modal" class="modal">
+
+
+<div class="modal-box">
+
+
+<div
+id="modalBanner"
+class="modal-banner">
+
+
+<button
+id="fecharModal"
+class="modal-close">
+
+✕
+
+</button>
+
+
+</div>
+
+
+
+<div class="modal-content">
+
+
+<h1 id="modalTitulo"></h1>
+
+
+
+<div
+id="modalMeta"
+class="modal-meta">
+
+</div>
+
+
+
+<p
+id="modalDescricao"
+class="modal-description">
+
+</p>
+
+
+
+<div id="modalTrailer">
+
+</div>
+
+
+
+<div id="modalProviders">
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<footer>
+
+
+© 2026 MultiTela
+
+
+</footer>
+
+
+
+
+
+<<script src="../../js/config.js"></script>
+<script src="../../js/api.js"></script>
+<script src="../../js/card.js"></script>
+<script src="../../js/modal.js"></script>
+<script src="../../js/categoria.js"></script>  
+<script src="../../js/search.js"></script>
+<script src="../../js/menu.js"></script>  
+<script src="../../js/autocomplete.js"></script>
+
+
+</body>
+
+
+</html>
