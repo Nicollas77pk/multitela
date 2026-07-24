@@ -98,9 +98,9 @@ function iniciarBusca() {
 
     }
 
-    const destino = pagina.includes("/paginas/")
-        ? "busca.html"
-        : "paginas/busca.html";
+    const destino = pagina.includes("/paginas/busca/")
+        ? "index.html"
+        : "paginas/busca/index.html";
 
     let url = `${destino}?q=${encodeURIComponent(texto)}`;
 
