@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -8,11 +9,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-<title>MultiTela - Desenhos</title>
+<title>MultiTela - Desenhos Online - onde assistir Desenhos</title>
 
 
 <meta name="description"
-content="Filmes online, descubra onde assistir seus filmes favoritos.">
+content="Desenhos online, descubra onde assistir seus desenhos favoritos.">
 
 
 <link rel="icon" href="../imagens/favicon.png">
@@ -34,7 +35,7 @@ content="Filmes online, descubra onde assistir seus filmes favoritos.">
 
 
 
-    <!-- HEADER -->
+   <!-- HEADER -->
 
   <header class="header">
 
@@ -42,10 +43,10 @@ content="Filmes online, descubra onde assistir seus filmes favoritos.">
 
         <!-- LOGO -->
 
-        <a href="/multitela/index.html" class="logo">
+        <a href="/" class="logo">
 
             <img
-                src="/multitela/imagens/MultiTela.png"
+                src="/imagens/MultiTela.png"
                 alt="MultiTela">
 
         </a>
@@ -60,110 +61,110 @@ content="Filmes online, descubra onde assistir seus filmes favoritos.">
 
         </button>
 
-       <!-- MENU -->
+      <!-- MENU -->
 
         <nav
             class="menu"
             id="menu">
 
-            <a href="/multitela/">
+            <a href="/">
 
                 Home
 
             </a>
 
-            <a href="/multitela/paginas/filmes.html">
+            <a href="/paginas/desenhos.html">
 
                 Filmes
 
             </a>
 
-            <a href="/multitela/paginas/series.html">
+            <a href="/paginas/desenhos.html">
 
                 Séries
 
             </a>
 
-            <a href="/multitela/paginas/animes.html">
+            <a href="/paginas/animes.html">
 
                 Animes
 
             </a>
           
-          <a href="/multitela/paginas/desenhos.html">
+          <a href="/paginas/desenhos.html">
 
                 Desenhos
 
             </a>
 
-            <a href="/multitela/paginas/doramas.html">
+            <a href="/paginas/doramas.html">
 
                 Doramas
 
             </a>
 
-            <a href="/multitela/paginas/novelas.html">
+            <a href="/paginas/novelas.html">
 
                 Novelas
 
             </a>
           
-          <a href="/multitela/paginas/novelas-turcas.html">
+          <a href="/paginas/novelas-turcas.html">
 
                 Novelas Turcas
 
             </a>
 
-            <a href="/multitela/paginas/documentarios.html">
+            <a href="/paginas/documentarios.html">
 
                 Documentários
 
             </a>
           
-          <a href="/multitela/paginas/terror.html">
+          <a href="/paginas/terror.html">
 
                 Terror
 
             </a>
           
-          <a href="/multitela/paginas/suspense.html">
+          <a href="/paginas/suspense.html">
 
                 Suspense
 
             </a>
           
-          <a href="/multitela/paginas/drama.html">
+          <a href="/paginas/drama.html">
 
                 Drama
 
             </a>
           
-          <a href="/multitela/paginas/romance.html">
+          <a href="/paginas/romance.html">
 
                 Romance
 
             </a>
           
-          <a href="/multitela/paginas/guerra.html">
+          <a href="/paginas/guerra.html">
 
                 Guerra
 
             </a>
           
-          <a href="/multitela/paginas/ficçao.html">
+          <a href="/paginas/ficçao.html">
 
                 Ficção
 
             </a>
           
-          <a href="/multitela/paginas/comedia.html">
+          <a href="/paginas/comedia.html">
 
                 Comédia
 
             </a>
 
         </nav>
-
+        
         <!-- BUSCA -->
 
         <div class="header-search">
@@ -176,15 +177,25 @@ content="Filmes online, descubra onde assistir seus filmes favoritos.">
 
                 autocomplete="off"
 
-                placeholder="Buscar filmes, séries, animes...">
+                placeholder="Buscar desenhos, séries, animes...">
 
-            <button
+            <button id="btnBusca" aria-label="Buscar">
 
-                id="btnBusca">
+<svg
+viewBox="0 0 24 24"
+fill="none"
+stroke="currentColor"
+stroke-width="2.4"
+stroke-linecap="round"
+stroke-linejoin="round">
 
-                🔍
+<circle cx="11" cy="11" r="7"></circle>
 
-            </button>
+<line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+
+</svg>
+
+</button>
 
             <div id="autocompleteBusca"></div>
 
