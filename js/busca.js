@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Estamos na página busca.html?
-    if (window.location.pathname.includes("busca.html")) {
+    if (window.location.pathname.includes("busca/index.html")) {
 
         const params = new URLSearchParams(window.location.search);
 
