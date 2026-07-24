@@ -66,99 +66,125 @@ content="Filmes online, descubra onde assistir seus filmes favoritos.">
             class="menu"
             id="menu">
 
-            <a href="/multitela/">
+            <a href="/">
 
                 Home
 
             </a>
 
-            <a href="/multitela/paginas/filmes.html">
+            <a href="/paginas/onde-assistir-filmes-online">
 
                 Filmes
 
             </a>
 
-            <a href="/multitela/paginas/series.html">
+            <a href="/paginas/onde-assistir-series-online">
 
                 Séries
 
             </a>
 
-            <a href="/multitela/paginas/animes.html">
+            <a href="/paginas/onde-assistir-animes-online">
 
                 Animes
 
             </a>
           
-          <a href="/multitela/paginas/desenhos.html">
+          <a href="/paginas/onde-assistir-desenhos-online">
 
-                Desenhos
+               Desenhos
 
             </a>
 
-            <a href="/multitela/paginas/doramas.html">
+            <a href="/paginas/onde-assistir-doramas-online">
 
                 Doramas
 
             </a>
 
-            <a href="/multitela/paginas/novelas.html">
+            <a href="/paginas/onde-assistir-novelas-online">
 
                 Novelas
 
             </a>
           
-          <a href="/multitela/paginas/novelas-turcas.html">
+          <a href="/paginas/onde-assistir-novelas-turcas-online">
 
                 Novelas Turcas
 
             </a>
 
-            <a href="/multitela/paginas/documentarios.html">
+            <a href="/paginas/onde-assistir-documentario-online">
 
                 Documentários
 
             </a>
           
-          <a href="/multitela/paginas/terror.html">
+          <a href="/paginas/onde-assistir-filmes-de-terror-online">
 
                 Terror
 
             </a>
           
-          <a href="/multitela/paginas/suspense.html">
+          <a href="/paginas/onde-assistir-filmes-de-suspense-online">
 
                 Suspense
 
             </a>
           
-          <a href="/multitela/paginas/drama.html">
+          <a href="/paginas/onde-assistir-filmes-de-drama-online">
 
                 Drama
 
             </a>
           
-          <a href="/multitela/paginas/romance.html">
+          <a href="/paginas/onde-assistir-filmes-de-romance-online">
 
                 Romance
 
             </a>
           
-          <a href="/multitela/paginas/guerra.html">
+          <a href="/paginas/onde-assistir-filmes-de-guerra-online">
 
                 Guerra
 
             </a>
           
-          <a href="/multitela/paginas/ficçao.html">
+          <a href="/paginas/onde-assistir-filmes-de-ficcao-online">
 
                 Ficção
 
             </a>
           
-          <a href="/multitela/paginas/comedia.html">
+          <a href="/paginas/onde-assistir-filmes-de-comedia-online">
 
                 Comédia
+
+            </a>
+          
+        
+          
+          <a href="/paginas/onde-assistir-filmes-de-aventura-online">
+
+                Aventura
+
+            </a>
+          
+           <a href="/paginas/onde-assistir-filmes-de-fantasia-online">
+
+                Fantasia
+
+            </a>
+          
+           <a href="/paginas/onde-assistir-filmes-de-acao-online">
+
+                Ação
+
+            </a>
+          
+           <a href="/paginas/onde-assistir-filmes-de-crimes-online">
+
+                Crimes
 
             </a>
 
