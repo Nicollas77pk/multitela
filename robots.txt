@@ -2,4 +2,4 @@ User-agent: *
 
 Allow: /
 
-Sitemap: https://nicollas77pk.github.io/multitela/sitemap.xml
+Sitemap: https://multitela.online/sitemap.xml
