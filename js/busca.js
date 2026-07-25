@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Estamos na página busca.html?
-    if (window.location.pathname.includes("busca.html")) {
+    if (window.location.pathname.includes("/busca.html")) {
 
         const params = new URLSearchParams(window.location.search);
 
@@ -72,37 +72,27 @@ function iniciarBusca() {
 
     const pagina = window.location.pathname.toLowerCase();
 
-    if (pagina.includes("filmes")) {
+    if (pagina.includes("filmes")) categoria = "filmes";
+    else if (pagina.includes("series")) categoria = "series";
+    else if (pagina.includes("animes")) categoria = "animes";
+    else if (pagina.includes("desenhos")) categoria = "desenhos";
+    else if (pagina.includes("doramas")) categoria = "doramas";
+    else if (pagina.includes("novelas-turcas")) categoria = "novelas-turcas";
+    else if (pagina.includes("novelas")) categoria = "novelas";
+    else if (pagina.includes("documentarios")) categoria = "documentarios";
+    else if (pagina.includes("terror")) categoria = "terror";
+    else if (pagina.includes("suspense")) categoria = "suspense";
+    else if (pagina.includes("drama")) categoria = "drama";
+    else if (pagina.includes("romance")) categoria = "romance";
+    else if (pagina.includes("guerra")) categoria = "guerra";
+    else if (pagina.includes("ficcao")) categoria = "ficcao";
+    else if (pagina.includes("comedia")) categoria = "comedia";
+    else if (pagina.includes("aventura")) categoria = "aventura";
+    else if (pagina.includes("fantasia")) categoria = "fantasia";
+    else if (pagina.includes("acao")) categoria = "acao";
+    else if (pagina.includes("crimes")) categoria = "crimes";
 
-        categoria = "filmes";
-
-    } else if (pagina.includes("series")) {
-
-        categoria = "series";
-
-    } else if (pagina.includes("animes")) {
-
-        categoria = "animes";
-
-    } else if (pagina.includes("doramas")) {
-
-        categoria = "doramas";
-
-    } else if (pagina.includes("novelas")) {
-
-        categoria = "novelas";
-
-    } else if (pagina.includes("documentarios")) {
-
-        categoria = "documentarios";
-
-    }
-
-    const destino = pagina.includes("/paginas/")
-        ? "busca.html"
-        : "paginas/buscaa.html";
-
-    let url = `${destino}?q=${encodeURIComponent(texto)}`;
+    let url = `/paginas/busca.html?q=${encodeURIComponent(texto)}`;
 
     if (categoria) {
 
@@ -113,6 +103,8 @@ function iniciarBusca() {
     window.location.href = url;
 
 }
+
+    
 
 async function buscarConteudo() {
 
