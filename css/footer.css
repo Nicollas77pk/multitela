@@ -193,7 +193,21 @@
 
 }
 
-@media(max-width:900px){
+@.footer-streaming,
+.footer-populares{
+
+    border-top:1px solid #202020;
+    padding:35px 0;
+
+}
+
+.footer-streaming .container,
+.footer-populares .container{
+
+    max-width:1450px;
+    margin:auto;
+
+}media(max-width:900px){
 
 .footer-grid{
 
