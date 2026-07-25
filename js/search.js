@@ -248,6 +248,7 @@ async function pesquisarAutocomplete(texto){
 
 }
 
+
 /* ==========================================================
    PESQUISAR
 ========================================================== */
@@ -264,20 +265,8 @@ function pesquisar(){
 
     fecharAutocomplete();
 
-    let destino = "";
-
-    if(window.location.pathname.includes("/paginas/")){
-
-        destino = "busca.html";
-
-    }else{
-
-        destino = "paginas/busca.html";
-
-    }
-
     window.location.href =
-        `${destino}?q=${encodeURIComponent(texto)}`;
+        `/paginas/busca.html?q=${encodeURIComponent(texto)}`;
 
 }
 
@@ -287,7 +276,7 @@ function pesquisar(){
 
 function verificarPaginaBusca(){
 
-    if(!window.location.pathname.includes("busca.html")){
+    if(!window.location.pathname.includes("/paginas/busca.html")){
 
         return;
 
