@@ -173,6 +173,26 @@
 
 }
 
+.footer-streaming,
+.footer-populares{
+
+    padding:30px 0;
+
+    border-top:1px solid #202020;
+
+}
+
+.footer-streaming h3,
+.footer-populares h3{
+
+    color:#fff;
+
+    margin-bottom:18px;
+
+    font-size:18px;
+
+}
+
 @media(max-width:900px){
 
 .footer-grid{
