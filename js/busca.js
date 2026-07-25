@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Estamos na página busca.html?
-    if (window.location.pathname.includes("busca/index.html")) {
+    if (window.location.pathname.includes("busca.html")) {
 
         const params = new URLSearchParams(window.location.search);
 
@@ -98,9 +98,9 @@ function iniciarBusca() {
 
     }
 
-    const destino = pagina.includes("/paginas/busca/")
-        ? "index.html"
-        : "paginas/busca/index.html";
+    const destino = pagina.includes("/paginas/")
+        ? "busca.html"
+        : "paginas/buscaa.html";
 
     let url = `${destino}?q=${encodeURIComponent(texto)}`;
 
