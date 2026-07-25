@@ -3,68 +3,84 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
-<loc>https://nicollas77pk.github.io/multitela/</loc>
-<priority>1.0</priority>
+    <loc>https://multitela.online/</loc>
+    <priority>1.0</priority>
 </url>
 
 <url>
-<loc>https://nicollas77pk.github.io/multitela/paginas/filmes.html</loc>
+    <loc>https://multitela.online/paginas/onde-assistir-filmes-online/</loc>
 </url>
 
 <url>
-<loc>https://nicollas77pk.github.io/multitela/paginas/series.html</loc>
+    <loc>https://multitela.online/paginas/onde-assistir-series-online/</loc>
 </url>
 
 <url>
-<loc>https://nicollas77pk.github.io/multitela/paginas/animes.html</loc>
+    <loc>https://multitela.online/paginas/onde-assistir-animes-online/</loc>
 </url>
 
 <url>
-<loc>https://nicollas77pk.github.io/multitela/paginas/desenhos.html</loc>
+    <loc>https://multitela.online/paginas/onde-assistir-desenhos-online/</loc>
 </url>
 
 <url>
-<loc>https://nicollas77pk.github.io/multitela/paginas/doramas.html</loc>
+    <loc>https://multitela.online/paginas/onde-assistir-doramas-online/</loc>
 </url>
 
 <url>
-<loc>https://nicollas77pk.github.io/multitela/paginas/novelas.html</loc>
+    <loc>https://multitela.online/paginas/onde-assistir-novelas-online/</loc>
 </url>
 
 <url>
-<loc>https://nicollas77pk.github.io/multitela/paginas/novelas-turcas.html</loc>
+    <loc>https://multitela.online/paginas/onde-assistir-novelas-turcas-online/</loc>
 </url>
 
 <url>
-<loc>https://nicollas77pk.github.io/multitela/paginas/documentarios.html</loc>
+    <loc>https://multitela.online/paginas/onde-assistir-documentario-online/</loc>
 </url>
 
 <url>
-<loc>https://nicollas77pk.github.io/multitela/paginas/terror.html</loc>
+    <loc>https://multitela.online/paginas/onde-assistir-filmes-de-terror-online/</loc>
 </url>
 
 <url>
-<loc>https://nicollas77pk.github.io/multitela/paginas/suspense.html</loc>
+    <loc>https://multitela.online/paginas/onde-assistir-filmes-de-suspense-online/</loc>
 </url>
 
 <url>
-<loc>https://nicollas77pk.github.io/multitela/paginas/drama.html</loc>
+    <loc>https://multitela.online/paginas/onde-assistir-filmes-de-drama-online/</loc>
 </url>
 
 <url>
-<loc>https://nicollas77pk.github.io/multitela/paginas/romance.html</loc>
+    <loc>https://multitela.online/paginas/onde-assistir-filmes-de-romance-online/</loc>
 </url>
 
 <url>
-<loc>https://nicollas77pk.github.io/multitela/paginas/guerra.html</loc>
+    <loc>https://multitela.online/paginas/onde-assistir-filmes-de-guerra-online/</loc>
 </url>
 
 <url>
-<loc>https://nicollas77pk.github.io/multitela/paginas/ficcao.html</loc>
+    <loc>https://multitela.online/paginas/onde-assistir-filmes-de-ficcao-online/</loc>
 </url>
 
 <url>
-<loc>https://nicollas77pk.github.io/multitela/paginas/comedia.html</loc>
+    <loc>https://multitela.online/paginas/onde-assistir-filmes-de-comedia-online/</loc>
+</url>
+
+<url>
+    <loc>https://multitela.online/paginas/onde-assistir-filmes-de-acao-online/</loc>
+</url>
+
+<url>
+    <loc>https://multitela.online/paginas/onde-assistir-filmes-de-aventura-online/</loc>
+</url>
+
+<url>
+    <loc>https://multitela.online/paginas/onde-assistir-filmes-de-fantasia-online/</loc>
+</url>
+
+<url>
+    <loc>https://multitela.online/paginas/onde-assistir-filmes-de-crimes-online/</loc>
 </url>
 
 </urlset>
