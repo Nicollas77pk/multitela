@@ -345,17 +345,7 @@ async function carregarOndeAssistir(id, tipo) {
 
             });
 
-            modalProviders.appendChild(lista);
-
-        } else {
-
-            modalProviders.innerHTML += `
-                <p>
-                    Não encontramos plataformas disponíveis para este conteúdo no Brasil.
-                </p>
-            `;
-
-        }
+            modalProviders.appendChild(lista);   
 
     } else {
 
