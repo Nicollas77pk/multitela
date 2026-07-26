@@ -1,1124 +1,375 @@
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Filmes – Populares e Lançamentos</title>
 
-<meta name="description" content="Veja as séries mais populares do momento. Sinopses, elenco, onde assistir e muito mais.">
-<meta name="keywords" content="séries populares, séries online, tmdb tv series, lançamentos séries">
-
-<link rel="icon" href="https://canaispuro.site/favicon.png" type="image/png">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<style>
+<title>MultiTela - onde assistir Doramas Online</title>
 
 
-h1 {
-    text-align: center;
-    margin-bottom: 25px;
-    color: #fff;
-}
-
-h2 {
-    text-align: center;
-    margin-bottom: 25px;
-    color: #009687;
-}
-
-h3 {
-    text-align: center;
-    font-size: 11px;
-    margin-bottom: 25px;
-    color: #fff;
-}
-
-.catalogo {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 30px;
-    position: relative;
-}
-
-.card {
-    background: #1a1a1a;
-    border-radius: 10px;
-    overflow: hidden;
-    cursor: pointer;
-    position: relative;
-    transition: transform 0.2s;
-}
-
-.card:hover {
-    transform: scale(1.05);
-}
-
-/* Hover escuro transparente com play */
-.card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0); /* normal: transparente */
-    transition: background 0.2s;
-    z-index: 1;
-}
-
-.card:hover::before {
-    background: rgba(0,0,0,0.5); /* hover: escuro e transparente */
-}
-
-.card::after {
-    content: '▶';
-    position: absolute;
-    font-size: 40px;
-    color: #009687;
-    opacity: 0;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: opacity 0.2s;
-    z-index: 2;
-}
-
-.card:hover::after {
-    opacity: 1;
-}
-
-.card img {
-    width: 100%;
-    height: 240px;
-    object-fit: cover;
-    display: block;
-}
-
-.card-info {
-    padding: 5px;
-    position: relative;
-    z-index: 3; /* acima do overlay */
-}
-
-.card-info h3 {
-    font-size: 11px;
-    margin: 0 0 8px;
-    height: 30px;
-    overflow: hidden;
-    color: #fff;
-}
-
-.nota {
-    background: #099687;
-    padding: 2px 6px;
-    border-radius: 6px;
-    font-size: 11px;
-    display: inline-block;
-    color: #000;
-}
-
-/* 🔥 MODAL */
-#modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.85);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    padding: 12px;
-    z-index: 9999;
-}
-
-#modal-content {
-    background: #222;
-    width: 95%;
-    max-width: 480px;
-    max-height: 90vh;
-    border-radius: 14px;
-    overflow: hidden;
-    position: relative;
-}
-
-#modal-img {
-    width: 100%;
-    height: 240px;
-    object-fit: cover;
-}
-
-#modal-body {
-    padding: 20px;
-    max-height: calc(90vh - 240px);
-    overflow-y: auto;
-}
-
-#close-modal {
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    font-size: 19px;
-    cursor: pointer;
-    border-radius: 50%;
-    padding: 6px 14px;
-    background: rgba(0,0,0,0.4);
-    color: #fff;
-}
-
-/* 🔥 DESKTOP */
-@media (min-width: 768px) {
-
-    .catalogo {
-        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    }
-
-    #modal-content {
-        width: 900px;
-        max-width: 900px;
-        height: 540px;
-        max-height: 85vh;
-        display: flex;
-        flex-direction: row;
-    }
-
-    #modal-img {
-        width: 45%;
-        height: 100%;
-    }
-
-    #modal-body {
-        width: 55%;
-        max-height: 100%;
-        overflow-y: auto;
-        padding: 28px;
-    }
-}
-
-/* 🔥 BOTÃO */
-#btn-carregar-mais {
-    display: block;
-    margin: 25px auto 40px auto;
-    padding: 14px 24px;
-    font-size: 16px;
-    background: #009687;
-    color: #000;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.2s;
-    width: 90%;
-    max-width: 300px;
-}
-
-#btn-carregar-mais:hover {
-    background: #00b6a4;
-}
-
-/* 🔍 BUSCA */
-#busca {
-    width: 90%;
-    max-width: 420px;
-    display: block;
-    margin: 0 auto 25px auto;
-    padding: 12px 15px;
-    font-size: 16px;
-    border-radius: 8px;
-    border: none;
-    outline: none;
-}
-  
-  
-  /* 🎨 Scrollbar moderna do modal */
-#modal-body {
-    scrollbar-width: thin;              /* Firefox */
-    scrollbar-color: #009687 #1a1a1a;   /* Firefox */
-}
-
-/* Chrome, Edge, Safari */
-#modal-body::-webkit-scrollbar {
-    width: 8px;
-}
-
-#modal-body::-webkit-scrollbar-track {
-    background: #111;
-    border-radius: 10px;
-}
-
-#modal-body::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, #00b6a4, #008f7a);
-    border-radius: 10px;
-}
-
-#modal-body::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, #0fffe3, #00b6a4);
-}
+<meta name="description"
+content="Séries online, descubra onde assistir seus series favoritos.">
 
 
-</style>
+<link rel="icon" href="/imagens/favicon.png">
+
+
+<link rel="stylesheet" href="../../css/variables.css">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/header.css">
+<link rel="stylesheet" href="../../css/cards.css">
+<link rel="stylesheet" href="../../css/modal.css">
+<link rel="stylesheet" href="../../css/footer.css">
+<link rel="stylesheet" href="../../css/autocomplete.css">
+
 </head>
+
 
 <body>
 
-<h1>Filmes</h1>
-<input type="text" id="busca" placeholder="Buscar por nome...">
 
-<div id="filtros"></div> <!-- opcional, posso gerar dinamicamente também -->
 
-<div class="catalogo" id="catalogo"></div>
+   <!-- HEADER -->
 
-<button id="btn-carregar-mais">Carregar mais</button>
+  <header class="header">
 
-<!-- MODAL -->
-<div id="modal">
-    <div id="modal-content">
-        <img id="modal-img">
-        <div id="modal-body"></div>
-        <button id="close-modal">X</button>
+    <div class="container">
+
+        <!-- LOGO -->
+
+        <a href="/" class="logo">
+
+            <img
+                src="/imagens/MultiTela.png"
+                alt="MultiTela">
+
+        </a>
+
+        <!-- MENU MOBILE -->
+
+        <button
+            class="menu-toggle"
+            id="menuToggle">
+
+            ☰
+
+        </button>
+
+      <!-- MENU -->
+
+       <nav
+            class="menu"
+            id="menu">
+
+            <a href="/">
+
+                Home
+
+            </a>
+
+            <a href="/paginas/onde-assistir-filmes-online">
+
+                Filmes
+
+            </a>
+
+            <a href="/paginas/onde-assistir-series-online">
+
+                Séries
+
+            </a>
+
+            <a href="/paginas/onde-assistir-animes-online">
+
+                Animes
+
+            </a>
+          
+          <a href="/paginas/onde-assistir-desenhos-online">
+
+               Desenhos
+
+            </a>
+
+            <a href="/paginas/onde-assistir-doramas-online">
+
+                Doramas
+
+            </a>
+
+            <a href="/paginas/onde-assistir-novelas-online">
+
+                Novelas
+
+            </a>
+          
+          <a href="/paginas/onde-assistir-novelas-turcas-online">
+
+                Novelas Turcas
+
+            </a>
+
+            <a href="/paginas/onde-assistir-documentario-online">
+
+                Documentários
+
+            </a>
+          
+          <a href="/paginas/onde-assistir-filmes-de-terror-online">
+
+                Terror
+
+            </a>
+          
+          <a href="/paginas/onde-assistir-filmes-de-suspense-online">
+
+                Suspense
+
+            </a>
+         
+         <a href="/paginas/onde-assistir-filmes-de-misterio-online">
+
+                Mist-erio
+
+            </a>
+          
+          <a href="/paginas/onde-assistir-filmes-de-drama-online">
+
+                Drama
+
+            </a>
+          
+          <a href="/paginas/onde-assistir-filmes-de-romance-online">
+
+                Romance
+
+            </a>
+          
+          <a href="/paginas/onde-assistir-filmes-de-guerra-online">
+
+                Guerra
+
+            </a>
+          
+          <a href="/paginas/onde-assistir-filmes-de-ficcao-online">
+
+                Ficção
+
+            </a>
+          
+          <a href="/paginas/onde-assistir-filmes-de-comedia-online">
+
+                Comédia
+
+            </a>
+          
+        
+          
+          <a href="/paginas/onde-assistir-filmes-de-aventura-online">
+
+                Aventura
+
+            </a>
+          
+           <a href="/paginas/onde-assistir-filmes-de-fantasia-online">
+
+                Fantasia
+
+            </a>
+          
+           <a href="/paginas/onde-assistir-filmes-de-acao-online">
+
+                Ação
+
+            </a>
+          
+           <a href="/paginas/onde-assistir-filmes-de-crimes-online">
+
+                Crimes
+
+            </a>
+
+        </nav>
+        
+        <!-- BUSCA -->
+
+        <div class="header-search">
+
+            <input
+
+                id="campoBusca"
+
+                type="search"
+
+                autocomplete="off"
+
+                placeholder="Buscar series, séries, animes...">
+
+            <button id="btnBusca" aria-label="Buscar">
+
+<svg
+viewBox="0 0 24 24"
+fill="none"
+stroke="currentColor"
+stroke-width="2.4"
+stroke-linecap="round"
+stroke-linejoin="round">
+
+<circle cx="11" cy="11" r="7"></circle>
+
+<line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+
+</svg>
+
+</button>
+
+            <div id="autocompleteBusca"></div>
+
+        </div>
+
     </div>
+
+</header>
+
+
+
+<!-- CONTEÚDO -->
+
+
+<section class="container secao">
+
+
+<div class="section-title">
+
+
+<h2>
+
+Doramas
+
+</h2>
+
+
 </div>
 
 
-<script>
-/* ========================
-      CONFIG
-======================== */
-const API_KEY = "841164866e07eba1e3ccb100a9d370fb";
-const catalogo = document.getElementById('catalogo');
-const btnMais = document.getElementById('btn-carregar-mais');
-const buscaInput = document.getElementById('busca');
 
-let page = 1;
-let carregando = false;
-let totalPages = 50;
-let modoBusca = false;
-let generoAtual = 0; // 0 = todos os gêneros
+<div
+id="lista-doramas"
+class="categoria-lista">
 
-/* ========================
-      LISTA DE GÊNEROS
-======================== */
-const generos = [
-    { id: 0, name: "Todos" },
-    { id: 18, name: "Drama" },
-    { id: 28, name: "Ação" },
-    { id: 35, name: "Comédia" },
-    { id: 27, name: "Terror" },
-    { id: 10749, name: "Romance" },
-    { id: 80, name: "Crime" },
-    { id: 12, name: "Aventura" },
-    { id: 16, name: "Animação" },
-    { id: 99, name: "Documentário" }
-];
 
-/* ========================
-      CRIAR BARRA DE FILTROS
-======================== */
-const filtros = document.createElement("div");
-filtros.style.cssText = `
-    display:flex;
-    gap:10px;
-    overflow-x:auto;
-    padding:10px 0;
-    margin-bottom:15px;
-`;
-catalogo.parentNode.insertBefore(filtros, catalogo);
+</div>
 
-generos.forEach(g => {
-    const botao = document.createElement("button");
-    botao.innerText = g.name;
 
-    botao.style.cssText = `
-        padding:8px 14px;
-        background:#222;
-        border:1px solid #444;
-        color:#fff;
-        border-radius:16px;
-        cursor:pointer;
-        white-space:nowrap;
-    `;
 
-    botao.onclick = () => selecionarGenero(g.id, botao);
+</section>
 
-    filtros.appendChild(botao);
-});
 
-function selecionarGenero(id, botao) {
-    generoAtual = id;
-    page = 1;
-    modoBusca = false;
-    catalogo.innerHTML = "";
-    btnMais.style.display = "block";
 
-    [...filtros.children].forEach(b => b.style.background = "#222");
-    botao.style.background = "#00897B";
 
-    carregarFilmes();
-}
-
-/* ========================
-      PROVIDERS
-======================== */
-const LINK_PROVIDERS = {
-    "Globoplay": "https://globoplay.globo.com/busca/?q=",
-    "Netflix": "https://www.netflix.com/search?q=",
-    "Amazon Prime Video": "https://www.primevideo.com/search/ref=atv_nb_sr?phrase=",
-    "Disney Plus": "https://www.disneyplus.com/pt-br/search?q=",
-    "HBO Max": "https://play.max.com/search?q=",
-    "Paramount Plus": "https://www.paramountplus.com/search/?q=",
-    "STAR+": "https://www.starplus.com/search?q=",
-    "Apple TV+": "https://tv.apple.com/search?q=",
-    "YouTube": "https://www.youtube.com/results?search_query="
-};
-
-async function getProviders(id) {
-    try {
-        const url = `https://api.themoviedb.org/3/movie/${id}/watch/providers?api_key=${API_KEY}`;
-        const res = await fetch(url);
-        const data = await res.json();
-
-        if (!data.results || !data.results.BR) return [];
-
-        const br = data.results.BR;
-        let list = [];
-
-        if (br.flatrate) list.push(...br.flatrate);
-        if (br.buy) list.push(...br.buy);
-        if (br.rent) list.push(...br.rent);
-
-        const seen = new Set();
-        return list.filter(p => !seen.has(p.provider_id) && seen.add(p.provider_id));
-    } catch { return []; }
-}
-
-/* ========================
-      EXIBIR FILMES
-======================== */
-function exibirFilmes(lista) {
-    if (page === 1 && !modoBusca) catalogo.innerHTML = "";
-
-    lista.forEach(item => {
-        const card = document.createElement("div");
-        card.className = "card";
-
-        const img = item.poster_path
-            ? `https://image.tmdb.org/t/p/w300${item.poster_path}`
-            : "https://via.placeholder.com/300x450?text=Sem+Imagem";
-
-        card.innerHTML = `
-            <img src="${img}">
-            <div class="card-info">
-                <h3>${item.title}</h3>
-                <div class="nota">⭐ ${(item.vote_average || 0).toFixed(1)}</div>
-            </div>
-        `;
-
-        card.onclick = () => abrirDetalhes(item.id);
-        catalogo.appendChild(card);
-    });
-}
-
-/* ========================
-      BUSCA FILMES
-======================== */
-async function buscarFilmes(txt) {
-    if (!txt.trim()) {
-        modoBusca = false;
-        page = 1;
-        catalogo.innerHTML = "";
-        carregarFilmes();
-        btnMais.style.display = "block";
-        return;
-    }
-
-    modoBusca = true;
-    btnMais.style.display = "none";
-
-    const url = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=pt-BR&query=${encodeURIComponent(txt)}`;
-    const res = await fetch(url);
-    const data = await res.json();
-
-    catalogo.innerHTML = "";
-    exibirFilmes(data.results);
-}
-
-buscaInput.addEventListener("input", e => buscarFilmes(e.target.value));
-
-/* ========================
-      CARREGAR FILMES
-======================== */
-async function carregarFilmes() {
-    if (carregando || modoBusca || page > totalPages) return;
-
-    carregando = true;
-
-    let url;
-
-    if (generoAtual === 0) {
-        url = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=pt-BR&page=${page}`;
-    } else {
-        url = `
-            https://api.themoviedb.org/3/discover/movie
-            ?api_key=${API_KEY}
-            &language=pt-BR
-            &with_genres=${generoAtual}
-            &sort_by=popularity.desc
-            &page=${page}
-        `.replace(/\s+/g, '');
-    }
-
-    const res = await fetch(url);
-    const data = await res.json();
-
-    exibirFilmes(data.results);
-
-    carregando = false;
-    page++;
-
-    if (page > totalPages) btnMais.style.display = "none";
-}
-
-/* ========================
-      MODAL
-======================== */
-async function abrirDetalhes(id) {
-    const url = `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=pt-BR`;
-    const r = await fetch(url);
-    const filme = await r.json();
-
-    const img = filme.backdrop_path
-        ? `https://image.tmdb.org/t/p/w780${filme.backdrop_path}`
-        : (filme.poster_path ? `https://image.tmdb.org/t/p/w780${filme.poster_path}` : "");
-
-    document.getElementById("modal-img").src = img;
-
-    let providers = await getProviders(id);
-    if (!providers || providers.length === 0) {
-        providers = [{ provider_name: "YouTube", logo_path: null }];
-    }
-
-    const providersHTML = providers.map(p => {
-        const base = LINK_PROVIDERS[p.provider_name] || LINK_PROVIDERS["YouTube"];
-        const linkFinal = base + encodeURIComponent(filme.title);
-
-        const logo = p.logo_path
-            ? `https://image.tmdb.org/t/p/w200${p.logo_path}`
-            : "https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png";
-
-        return `
-            <a href="${linkFinal}" target="_blank" style="
-                display:flex;
-                align-items:center;
-                gap:8px;
-                padding:6px 8px;
-                margin-top:8px;
-                background:#151515;
-                border-radius:6px;
-                text-decoration:none;
-                color:#fff;
-            ">
-                <img src="${logo}" style="width:18px;height:18px;">
-                <span>${p.provider_name}</span>
-            </a>`;
-    }).join("");
-
-    document.getElementById("modal-body").innerHTML = `
-        <h2>${filme.title}</h2>
-        <p style="color:#ccc;"><strong>Lançamento:</strong> ${filme.release_date || "—"}</p>
-        <p style="color:#ddd;">${filme.overview || "Sem descrição disponível."}</p>
-
-        <h3 style="margin-top:16px;color:#fff;">Onde assistir</h3>
-        <div>${providersHTML}</div>
-    `;
-
-    document.getElementById("modal").style.display = "flex";
-}
-
-document.getElementById("close-modal").onclick = () =>
-    document.getElementById("modal").style.display = "none";
-
-window.onclick = e => {
-    if (e.target.id === "modal")
-        document.getElementById("modal").style.display = "none";
-};
-
-btnMais.onclick = carregarFilmes;
-
-carregarFilmes();
-</script>
-
-
-
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Novelas Brasileiras – Popular</title>
-<meta name="description" content="Novelas brasileiras populares: sinopses, onde assistir e detalhes.">
-<link rel="icon" href="https://canaispuro.site/favicon.png" type="image/png">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-<style>
-
-
-h1 {
-    text-align: center;
-    margin-bottom: 25px;
-    color: #fff;
-}
-
-h2 {
-    text-align: center;
-    margin-bottom: 25px;
-    color: #009687;
-}
-
-h3 {
-    text-align: center;
-    font-size: 11px;
-    margin-bottom: 25px;
-    color: #fff;
-}
-
-.catalogo {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 30px;
-    position: relative;
-}
-
-.card {
-    background: #1a1a1a;
-    border-radius: 10px;
-    overflow: hidden;
-    cursor: pointer;
-    position: relative;
-    transition: transform 0.2s;
-}
-
-.card:hover {
-    transform: scale(1.05);
-}
-
-/* Hover escuro transparente com play */
-.card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0); /* normal: transparente */
-    transition: background 0.2s;
-    z-index: 1;
-}
-
-.card:hover::before {
-    background: rgba(0,0,0,0.5); /* hover: escuro e transparente */
-}
-
-.card::after {
-    content: '▶';
-    position: absolute;
-    font-size: 40px;
-    color: #009687;
-    opacity: 0;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: opacity 0.2s;
-    z-index: 2;
-}
-
-.card:hover::after {
-    opacity: 1;
-}
-
-.card img {
-    width: 100%;
-    height: 240px;
-    object-fit: cover;
-    display: block;
-}
-
-.card-info {
-    padding: 5px;
-    position: relative;
-    z-index: 3; /* acima do overlay */
-}
-
-.card-info h3 {
-    font-size: 11px;
-    margin: 0 0 8px;
-    height: 30px;
-    overflow: hidden;
-    color: #fff;
-}
-
-.nota {
-    background: #099687;
-    padding: 2px 6px;
-    border-radius: 6px;
-    font-size: 11px;
-    display: inline-block;
-    color: #000;
-}
-
-/* 🔥 MODAL */
-#modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.85);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    padding: 12px;
-    z-index: 9999;
-}
-
-#modal-content {
-    background: #222;
-    width: 95%;
-    max-width: 480px;
-    max-height: 90vh;
-    border-radius: 14px;
-    overflow: hidden;
-    position: relative;
-}
-
-#modal-img {
-    width: 100%;
-    height: 240px;
-    object-fit: cover;
-}
-
-#modal-body {
-    padding: 20px;
-    max-height: calc(90vh - 240px);
-    overflow-y: auto;
-}
-
-#close-modal {
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    font-size: 19px;
-    cursor: pointer;
-    border-radius: 50%;
-    padding: 6px 14px;
-    background: rgba(0,0,0,0.4);
-    color: #fff;
-}
-
-/* 🔥 DESKTOP */
-@media (min-width: 768px) {
-
-    .catalogo {
-        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    }
-
-    #modal-content {
-        width: 900px;
-        max-width: 900px;
-        height: 540px;
-        max-height: 85vh;
-        display: flex;
-        flex-direction: row;
-    }
-
-    #modal-img {
-        width: 45%;
-        height: 100%;
-    }
-
-    #modal-body {
-        width: 55%;
-        max-height: 100%;
-        overflow-y: auto;
-        padding: 28px;
-    }
-}
-
-/* 🔥 BOTÃO */
-#btn-carregar-mais {
-    display: block;
-    margin: 25px auto 40px auto;
-    padding: 14px 24px;
-    font-size: 16px;
-    background: #009687;
-    color: #000;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.2s;
-    width: 90%;
-    max-width: 300px;
-}
-
-#btn-carregar-mais:hover {
-    background: #00b6a4;
-}
-
-/* 🔍 BUSCA */
-#busca {
-    width: 90%;
-    max-width: 420px;
-    display: block;
-    margin: 0 auto 25px auto;
-    padding: 12px 15px;
-    font-size: 16px;
-    border-radius: 8px;
-    border: none;
-    outline: none;
-}
-  
-  
-  /* 🎨 Scrollbar moderna do modal */
-#modal-body {
-    scrollbar-width: thin;              /* Firefox */
-    scrollbar-color: #009687 #1a1a1a;   /* Firefox */
-}
-
-/* Chrome, Edge, Safari */
-#modal-body::-webkit-scrollbar {
-    width: 8px;
-}
-
-#modal-body::-webkit-scrollbar-track {
-    background: #111;
-    border-radius: 10px;
-}
-
-#modal-body::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, #00b6a4, #008f7a);
-    border-radius: 10px;
-}
-
-#modal-body::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, #0fffe3, #00b6a4);
-}
-
-
-</style>
-</head>
-<body>
-
-<h1>Novelas Brasileiras</h1>
-
-<input type="text" id="busca" placeholder="Buscar por nome..." />
-
-<div class="catalogo" id="catalogo"></div>
-
-<button id="btn-carregar-mais">Carregar mais</button>
 
 <!-- MODAL -->
-<div id="modal">
-  <div id="modal-content">
-    <button id="close-modal">X</button>
-    <img id="modal-img" alt="">
-    <div id="modal-body"></div>
-  </div>
+
+
+<div id="modal" class="modal">
+
+
+<div class="modal-box">
+
+
+<div
+id="modalBanner"
+class="modal-banner">
+
+
+<button
+id="fecharModal"
+class="modal-close">
+
+✕
+
+</button>
+
+
 </div>
 
-<script>
-/* ===========================
-      CONFIGURAÇÕES
-=========================== */
-const API_KEY = "841164866e07eba1e3ccb100a9d370fb";
-const catalogo = document.getElementById("catalogo");
-const btnMais = document.getElementById("btn-carregar-mais");
-const campoBusca = document.getElementById("busca");
 
-let page = 1;
-let carregando = false;
-let totalPages = 10;
-let modoBusca = false;
-let ultimaQuery = ""; // guarda a query atual da busca
 
-/* ===========================
-      LINKS PROVIDERS (mantive igual)
-=========================== */
-const LINK_PROVIDERS = {
-    "Globoplay": "https://globoplay.globo.com/busca/?q=",
-    "Netflix": "https://www.netflix.com/search?q=",
-    "Amazon Prime Video": "https://www.primevideo.com/search/ref=atv_nb_sr?phrase=",
-    "Disney Plus": "https://www.disneyplus.com/pt-br/search?q=",
-    "HBO Max": "https://play.max.com/search?q=",
-    "Paramount Plus": "https://www.paramountplus.com/search/?q=",
-    "Apple TV+": "https://tv.apple.com/search?q=",
-    "STAR+": "https://www.starplus.com/search?q=",
-    "YouTube": "https://www.youtube.com/results?search_query="
-};
+<div class="modal-content">
 
-/* ===========================
-      PROVIDERS (TV)
-=========================== */
-async function getProviders(tvId) {
-    try {
-        const url = `https://api.themoviedb.org/3/tv/${tvId}/watch/providers?api_key=${API_KEY}`;
-        const r = await fetch(url);
-        const data = await r.json();
 
-        if (!data.results || !data.results.BR) return [];
+<h1 id="modalTitulo"></h1>
 
-        const br = data.results.BR;
-        let list = [];
 
-        if (br.flatrate) list.push(...br.flatrate);
-        if (br.rent) list.push(...br.rent);
-        if (br.buy) list.push(...br.buy);
 
-        const seen = new Set();
-        return list.filter(p => !seen.has(p.provider_id) && seen.add(p.provider_id));
+<div
+id="modalMeta"
+class="modal-meta">
 
-    } catch {
-        return [];
-    }
-}
+</div>
 
-/* ===========================
-      EXIBIR NOVELAS (corrigida)
-      - reset = true limpa antes de adicionar
-=========================== */
-function exibirNovelas(lista, reset = false) {
-    if (reset) catalogo.innerHTML = "";
 
-    lista.forEach(item => {
-        const card = document.createElement("div");
-        card.className = "card";
 
-        const imagem = item.poster_path
-            ? `https://image.tmdb.org/t/p/w300${item.poster_path}`
-            : "https://via.placeholder.com/300x450?text=Sem+Imagem";
+<p
+id="modalDescricao"
+class="modal-description">
 
-        card.innerHTML = `
-            <img src="${imagem}" alt="${item.name}">
-            <div class="card-info">
-                <h3>${item.name}</h3>
-                <div class="nota">⭐ ${(item.vote_average || 0).toFixed(1)}</div>
-            </div>
-        `;
+</p>
 
-        card.onclick = () => abrirDetalhes(item.id);
-        catalogo.appendChild(card);
-    });
-}
 
-/* ===========================
-      BUSCA NOVELAS (usa API, reseta corretamente)
-=========================== */
-async function buscarNovelas(query) {
-    ultimaQuery = query.trim();
-    if (!ultimaQuery) {
-        // se apagou o campo, volta ao modo discover
-        modoBusca = false;
-        page = 1;
-        btnMais.style.display = ""; // mostrar botão
-        carregarNovelas(true, ""); // reset e carregar discover
-        return;
-    }
 
-    // busca ativa
-    modoBusca = true;
-    page = 1; // começa da página 1 da busca
-    btnMais.style.display = "inline-block"; // permitir carregar mais resultados da busca
-    btnMais.innerText = "Carregar mais";
-    catalogo.innerHTML = ""; // limpar antes de exibir resultados
+<div id="modalTrailer">
 
-    const url = `https://api.themoviedb.org/3/search/tv?api_key=${API_KEY}&language=pt-BR&query=${encodeURIComponent(ultimaQuery)}&page=${page}`;
-    try {
-        const response = await fetch(url);
-        const data = await response.json();
+</div>
 
-        totalPages = data.total_pages || 1;
-        exibirNovelas(data.results || [], true);
-    } catch (e) {
-        console.error("Erro na busca:", e);
-        exibirNovelas([], true);
-    }
-}
 
-/* debounce simples para não spammar a API ao digitar */
-let debounceTimer = null;
-campoBusca.addEventListener("input", e => {
-    clearTimeout(debounceTimer);
-    debounceTimer = setTimeout(() => {
-        buscarNovelas(e.target.value);
-    }, 350);
-});
 
-/* ===========================
-      CARREGAR NOVELAS (discover + busca)
-      - aceita reset (limpa catálogo) e query ("" = discover)
-=========================== */
-async function carregarNovelas(reset = false, query = "") {
-    if (carregando) return;
-    carregando = true;
+<div id="modalProviders">
 
-    btnMais.disabled = true;
-    btnMais.innerText = "Carregando...";
+</div>
 
-    if (reset) {
-        catalogo.innerHTML = "";
-        page = 1;
-    }
 
-    let url = "";
-    if (modoBusca && query.trim()) {
-        // carregar próxima página da busca atual
-        url = `https://api.themoviedb.org/3/search/tv?api_key=${API_KEY}&language=pt-BR&query=${encodeURIComponent(query)}&page=${page}`;
-    } else {
-        // discover de novelas brasileiras
-        url = `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&language=pt-BR&with_origin_country=BR&with_original_language=pt&sort_by=popularity.desc&page=${page}`;
-    }
 
-    try {
-        const response = await fetch(url);
-        const data = await response.json();
+</div>
 
-        totalPages = data.total_pages || 1;
 
-        // se for busca, reset já foi tratado antes
-        exibirNovelas(data.results || [], false);
+</div>
 
-        // incrementar página para próxima chamada
-        page++;
 
-        // esconder botão quando acabar
-        if (page > totalPages) {
-            btnMais.style.display = "none";
-        } else {
-            btnMais.style.display = "inline-block";
-        }
+</div>
 
-    } catch (e) {
-        console.error("Erro ao carregar novelas:", e);
-    } finally {
-        carregando = false;
-        btnMais.disabled = false;
-        btnMais.innerText = "Carregar mais";
-    }
-}
 
-/* ===========================
-      MODAL DETALHES NOVELA
-=========================== */
-async function abrirDetalhes(id) {
-    try {
-        const url = `https://api.themoviedb.org/3/tv/${id}?api_key=${API_KEY}&language=pt-BR`;
-        const response = await fetch(url);
-        const novela = await response.json();
 
-        const imagem = novela.backdrop_path
-            ? `https://image.tmdb.org/t/p/w780${novela.backdrop_path}`
-            : (novela.poster_path ? `https://image.tmdb.org/t/p/w780${novela.poster_path}` : "");
 
-        document.getElementById("modal-img").src = imagem;
 
-        let providers = await getProviders(id);
+<footer>
 
-        if (!providers || providers.length === 0) {
-            providers = [{
-                provider_name: "YouTube",
-                logo_path: null,
-                provider_id: -1
-            }];
-        }
 
-        const providersHTML = providers
-            .map(p => {
-                const name = p.provider_name || "Desconhecido";
-                const linkBase = LINK_PROVIDERS[name];
-                const finalLink = linkBase
-                    ? linkBase + encodeURIComponent(novela.name)
-                    : LINK_PROVIDERS["YouTube"] + encodeURIComponent(novela.name + " novela");
+© 2026 MultiTela
 
-                const logoSrc = p.logo_path
-                    ? `https://image.tmdb.org/t/p/w200${p.logo_path}`
-                    : "https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png";
 
-                return `
-                    <a href="${finalLink}" target="_blank"
-                       style="display:flex; align-items:center; gap:8px; padding:6px 8px; background:#151515; border-radius:6px; margin-top:8px; text-decoration:none; color:#fff; font-size:13px;">
-                        <img src="${logoSrc}" style="width:15px; height:15px;">
-                        <span style="font-size:13px; font-weight:600;">${name}</span>
-                    </a>
-                `;
-            })
-            .join("");
+</footer>
 
-        document.getElementById("modal-body").innerHTML = `
-            <h2>${novela.name}</h2>
-            <p style="color:#ccc;"><strong>Estreia:</strong> ${novela.first_air_date}</p>
-            <p style="color:#ddd;">${novela.overview || "Sem descrição disponível."}</p>
 
-            <h3 style="margin-top:16px; color:#fff;">Onde assistir</h3>
-            <div id="providers-area">${providersHTML}</div>
-        `;
 
-        document.getElementById("modal").style.display = "flex";
-    } catch (e) {
-        console.error("Erro ao abrir detalhes:", e);
-    }
-}
 
-/* ===========================
-      FECHAR MODAL
-=========================== */
-document.getElementById("close-modal").onclick = () =>
-    document.getElementById("modal").style.display = "none";
 
-window.onclick = e => {
-    if (e.target.id === "modal")
-        document.getElementById("modal").style.display = "none";
-};
-
-/* ===========================
-      BOTÃO CARREGAR MAIS
-      - passa a ultimaQuery quando em modoBusca
-=========================== */
-btnMais.addEventListener("click", () => {
-    if (modoBusca) {
-        carregarNovelas(false, ultimaQuery);
-    } else {
-        carregarNovelas(false, "");
-    }
-});
-
-/* ===========================
-      INICIAR (carrega discover)
-=========================== */
-carregarNovelas();
-</script>
+<script src="../../js/config.js"></script>
+<script src="../../js/api.js"></script>
+<script src="../../js/card.js"></script>
+<script src="../../js/modal.js"></script>
+<script src="../../js/categoria.js"></script>  
+<script src="../../js/search.js"></script>
+<script src="../../js/menu.js"></script>  
+<script src="../../js/autocomplete.js"></script>
 
 
 </body>
+
+
 </html>
