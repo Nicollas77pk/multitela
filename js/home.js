@@ -31,6 +31,16 @@ async function iniciarHome() {
         await carregarAnimes();
 
         await carregarNovelas();
+       
+        await carregarDesenhos();
+
+        await carregarMisterio();
+
+        await carregarFantasia();
+       
+        await carregarBanner();
+
+       
 
         ativarHero();
 
