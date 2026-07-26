@@ -298,106 +298,103 @@ async function carregarOndeAssistir(id, tipo) {
 
     modalProviders.innerHTML = "<h3>Onde assistir</h3>";
 
-    if (!dados.results || !dados.results.BR) {
+    if (dados.results && dados.results.BR) {
 
-        modalProviders.innerHTML +=
-            "<p>Não encontramos plataformas disponíveis para o Brasil.</p>";
+        const br = dados.results.BR;
 
-        return;
+        let providers = [];
+
+        if (br.flatrate) providers.push(...br.flatrate);
+        if (br.buy) providers.push(...br.buy);
+        if (br.rent) providers.push(...br.rent);
+
+        // Remove repetidos
+        providers = providers.filter((provider, index, self) =>
+            index === self.findIndex(p => p.provider_id === provider.provider_id)
+        );
+
+        if (providers.length > 0) {
+
+            const lista = document.createElement("div");
+
+            lista.className = "providers";
+
+            providers.forEach(provider => {
+
+                const nome = provider.provider_name;
+
+                const link = LINK_PROVIDERS[nome]
+                    ? LINK_PROVIDERS[nome] + busca
+                    : br.link;
+
+                lista.innerHTML += `
+                    <a
+                        class="provider"
+                        href="${link}"
+                        target="_blank"
+                        rel="noopener">
+
+                        <img
+                            src="https://image.tmdb.org/t/p/w92${provider.logo_path}"
+                            alt="${nome}">
+
+                        <span>${nome}</span>
+
+                    </a>
+                `;
+
+            });
+
+            modalProviders.appendChild(lista);
+
+        } else {
+
+            modalProviders.innerHTML += `
+                <p>
+                    Não encontramos plataformas disponíveis para este conteúdo no Brasil.
+                </p>
+            `;
+
+        }
+
+    } else {
+
+        modalProviders.innerHTML += `
+            <p>
+                Não encontramos plataformas disponíveis para este conteúdo no Brasil.
+            </p>
+        `;
 
     }
 
-    const br = dados.results.BR;
-
-    let providers = [];
-
-    if (br.flatrate) providers.push(...br.flatrate);
-
-    if (br.buy) providers.push(...br.buy);
-
-    if (br.rent) providers.push(...br.rent);
-
-    /* Remove repetidos */
-
-    providers = providers.filter((provider, index, self) =>
-
-        index === self.findIndex(p => p.provider_id === provider.provider_id)
-
-    );
-
-    const lista = document.createElement("div");
-
-    lista.className = "providers";
-
-    providers.forEach(provider => {
-
-        const nome = provider.provider_name;
-
-        const link = LINK_PROVIDERS[nome]
-
-            ? LINK_PROVIDERS[nome] + busca
-
-            : br.link;
-
-        lista.innerHTML += `
-
-            <a
-                class="provider"
-                href="${link}"
-                target="_blank"
-                rel="noopener">
-
-                <img
-                    src="https://image.tmdb.org/t/p/w92${provider.logo_path}"
-                    alt="${nome}">
-
-                <span>
-
-                    ${nome}
-
-                </span>
-
-            </a>
-
-        `;
-
-    });
-
-    modalProviders.appendChild(lista);
-
-    /* Oferta */
+    /* ====================================================
+       OFERTA (SEMPRE APARECE)
+    ==================================================== */
 
     modalProviders.innerHTML += `
 
-<div class="streaming-oferta">
+    <div class="streaming-oferta">
 
-    <h3>
+        <h3>
+            💡 Quer vários streamings pagando o preço de um?
+        </h3>
 
-        💡 Quer vários streamings pagando o preço de um?
+        <p>
+            Tenha acesso a diversas plataformas em um único plano.
+        </p>
 
-    </h3>
+        <a
+            href="https://wa.me/5521994414427?text=Olá!%20Vi%20no%20MultiTela%20e%20gostaria%20de%20saber%20mais."
+            target="_blank"
+            class="streaming-btn">
 
-    <p>
+            Saiba mais
 
-        Tenha acesso a diversas plataformas em um único plano.
+        </a>
 
-    </p>
+    </div>
 
-    <a
-
-        href="https://wa.me/5521994414427?text=Olá!%20Vi%20no%20MultiTela%20e%20gostaria%20de%20saber%20mais."
-
-        target="_blank"
-
-        class="streaming-btn">
-
-        Saiba mais
-
-    </a>
-
-</div>
-
-`;
+    `;
 
 }
 
