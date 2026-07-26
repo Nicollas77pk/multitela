@@ -224,6 +224,30 @@ async function carregarSeries(){
 }
 
 /* ==========================================
+   MISTÉRIO
+========================================== */
+
+async function carregarMisterio(){
+
+    const dados = await api(
+
+        "/discover/movie?with_genres=9648&sort_by=popularity.desc"
+
+    );
+
+    renderizarCards(
+
+        "carrossel-misterio",
+
+        dados.results,
+
+        "movie"
+
+    );
+
+}
+
+/* ==========================================
    ANIMES
 ========================================== */
 
@@ -242,6 +266,54 @@ async function carregarAnimes(){
         dados.results,
 
         "tv"
+
+    );
+
+}
+
+/* ==========================================
+   DESENHOS
+========================================== */
+
+async function carregarDesenhos(){
+
+    const dados = await api(
+
+        "/discover/tv?with_genres=16&sort_by=popularity.desc"
+
+    );
+
+    renderizarCards(
+
+        "carrossel-desenhos",
+
+        dados.results,
+
+        "tv"
+
+    );
+
+}
+
+/* ==========================================
+   FANTASIA
+========================================== */
+
+async function carregarFantasia(){
+
+    const dados = await api(
+
+        "/discover/movie?with_genres=14&sort_by=popularity.desc"
+
+    );
+
+    renderizarCards(
+
+        "carrossel-fantasia",
+
+        dados.results,
+
+        "movie"
 
     );
 
