@@ -221,11 +221,6 @@ function preencherModal(item,tipo){
 
 
 /* ===========================
-   ONDE ASSISTIR
-=========================== */
-
-
-/* ===========================
    BIBLIOTECA DE LINKS
 =========================== */
 
@@ -393,36 +388,7 @@ async function carregarOndeAssistir(id, tipo) {
     `;
 
 }
-    /* ====================================================
-       OFERTA (SEMPRE APARECE)
-    ==================================================== */
-
-    modalProviders.innerHTML += `
-
-    <div class="streaming-oferta">
-
-        <h3>
-            💡 Quer vários streamings pagando o preço de um?
-        </h3>
-
-        <p>
-            Tenha acesso a diversas plataformas em um único plano.
-        </p>
-
-        <a
-            href="https://wa.me/5521994414427?text=Olá!%20Vi%20no%20MultiTela%20e%20gostaria%20de%20saber%20mais."
-            target="_blank"
-            class="streaming-btn">
-
-            Saiba mais
-
-        </a>
-
-    </div>
-
-    `;
-
-}
+ 
 
 /* ===========================
    TRAILER
