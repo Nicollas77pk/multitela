@@ -511,12 +511,6 @@ error
 
 
 }
-<section class="modal-similares">
-    <h3>🎬 Quem gostou deste filme também assistiu</h3>
-
-    <div id="modalSimilar" class="cards-grid"></div>
-</section>
-
 
 async function carregarSimilares(id, tipo) {
 
