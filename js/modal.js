@@ -512,7 +512,9 @@ error
 
 }
 
+async function carregarSimilares(id, tipo) {
 
+}
 
 
 
