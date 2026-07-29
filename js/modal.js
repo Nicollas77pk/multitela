@@ -67,10 +67,7 @@ async function abrirModal(id, tipo = "movie") {
             tipo
         );
 
-       await carregarSimilares(
-    id,
-    tipo
-);
+       
 
     } catch(error){
 
